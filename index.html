@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MicroSysLogic - Innovative Technology Solutions</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#1E3D59", secondary: "#17A2B8" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Poppins", sans-serif;
+      }
+      .hero-section {
+        position: relative;
+        overflow: hidden;
+      }
+      .carousel-container {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+        height: 100%;
+      }
+      .carousel-slide {
+        flex: 0 0 100%;
+        background-size: cover;
+        background-position: center;
+      }
+      .carousel-indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        z-index: 10;
+      }
+      .carousel-indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .carousel-indicator.active {
+        background-color: white;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+      }
+      .custom-checkbox {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #1e3d59;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .custom-checkbox.checked::after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 6px;
+        width: 6px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+      .custom-checkbox.checked {
+        background-color: #1e3d59;
+      }
+      .custom-switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+      }
+      .custom-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+      input:checked + .slider {
+        background-color: #1e3d59;
+      }
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+      .custom-range {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 6px;
+        border-radius: 5px;
+        background: #d3d3d3;
+        outline: none;
+      }
+      .custom-range::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #1e3d59;
+        cursor: pointer;
+      }
+      .custom-range::-moz-range-thumb {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #1e3d59;
+        cursor: pointer;
+      }
+      .custom-radio {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #1e3d59;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .custom-radio.checked::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #1e3d59;
+      }
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .text-animation {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s forwards;
+      }
+      .text-animation-delay-1 {
+        animation-delay: 0.2s;
+      }
+      .text-animation-delay-2 {
+        animation-delay: 0.4s;
+      }
+      .text-animation-delay-3 {
+        animation-delay: 0.6s;
+      }
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .logoi {
+        padding-left: 15px;
+        height: 80px;
+        width: 120px;
+        object-fit: cover;
+      }
+      #hdh {
+        height: 80px;
+        width: 100%;
+      }
+
+      .card-animation {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card-animation:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Header -->
+    <header id="hdh" class="sticky top-0 z-50 bg-white shadow-md">
+      <div
+        class="container mx-auto px-0 py-0 flex justify-between items-center"
+      >
+        <a href="h3.html" class="flex items-center">
+          <img
+            class="logoi"
+            src="https://static.readdy.ai/image/b24679fa8378e170677a56ca770f2ea8/7ed7cafd3d5c6a28c37bee8fba78802a.jpeg"
+            alt="MicroSysLogic Logo"
+            class="h-10"
+          />
+        </a>
+        <nav class="hidden lg:flex space-x-8">
+          <a href="#" class="font-medium text-primary border-b-2 border-primary"
+            >Home</a
+          >
+          <a
+            href="service.html"
+            class="font-medium text-gray-700 hover:text-primary transition-colors"
+            target="_parent"
+            >Services</a
+          >
+          <a
+            href="career.html"
+            class="font-medium text-gray-700 hover:text-primary transition-colors"
+            target="_parent"
+            >Careers</a
+          >
+          <a
+            href="aboutus.html"
+            class="font-medium text-gray-700 hover:text-primary transition-colors"
+            target="_parent"
+            >About Us</a
+          >
+          <a
+            href="#"
+            class="font-medium text-gray-700 hover:text-primary transition-colors"
+            target="_parent"
+            >Projects</a
+          >
+          <a
+            href="contactus.html"
+            class="font-medium text-gray-700 hover:text-primary transition-colors"
+            target="_parent"
+            >Contact</a
+          >
+        </nav>
+        <div class="lg:hidden w-10 h-10 flex items-center justify-center">
+          <i class="ri-menu-line ri-lg text-primary"></i>
+        </div>
+        <button
+          class="hidden lg:block bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+        >
+          Get in Touch
+        </button>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero-section w-full">
+      <div class="carousel-container">
+        <div
+          class="carousel-slide relative"
+          style="
+            background-image: linear-gradient(
+                90deg,
+                rgba(30, 61, 89, 0.9) 0%,
+                rgba(30, 61, 89, 0.7) 50%,
+                rgba(30, 61, 89, 0.5) 100%
+              ),
+              url('https://public.readdy.ai/ai/img_res/b8fe629234f5c803bc67067c40f03809.jpg');
+          "
+        >
+          <div class="container mx-auto px-4 py-24 md:py-32">
+            <div class="w-full max-w-2xl text-white">
+              <h1
+                class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-animation"
+              >
+                Innovative Technology Solutions for Your Business
+              </h1>
+              <p
+                class="text-lg md:text-xl mb-8 opacity-90 text-animation text-animation-delay-1"
+              >
+                We deliver cutting-edge technology solutions that drive digital
+                transformation and business growth in an ever-evolving digital
+                landscape.
+              </p>
+              <div
+                class="flex flex-wrap gap-4 text-animation text-animation-delay-2"
+              >
+                <button
+                  class="bg-secondary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+                >
+                  Explore Services
+                </button>
+                <button
+                  class="bg-white text-primary px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+                >
+                  Contact Us
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="carousel-slide relative"
+          style="
+            background-image: linear-gradient(
+                90deg,
+                rgba(30, 61, 89, 0.9) 0%,
+                rgba(30, 61, 89, 0.7) 50%,
+                rgba(30, 61, 89, 0.5) 100%
+              ),
+              url('https://public.readdy.ai/ai/img_res/b30576a81381ecbbaee6216b68f240f3.jpg');
+          "
+        >
+          <div class="container mx-auto px-4 py-24 md:py-32">
+            <div class="w-full max-w-2xl text-white">
+              <h1
+                class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-animation"
+              >
+                Cloud Solutions for Enterprise Growth
+              </h1>
+              <p
+                class="text-lg md:text-xl mb-8 opacity-90 text-animation text-animation-delay-1"
+              >
+                Leverage our cloud expertise to scale your business, reduce
+                costs, and enhance security in today's competitive market.
+              </p>
+              <div
+                class="flex flex-wrap gap-4 text-animation text-animation-delay-2"
+              >
+                <button
+                  class="bg-secondary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+                >
+                  Cloud Services
+                </button>
+                <button
+                  class="bg-white text-primary px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+                >
+                  Get a Demo
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="carousel-slide relative"
+          style="
+            background-image: linear-gradient(
+                90deg,
+                rgba(30, 61, 89, 0.9) 0%,
+                rgba(30, 61, 89, 0.7) 50%,
+                rgba(30, 61, 89, 0.5) 100%
+              ),
+              url('https://public.readdy.ai/ai/img_res/d343dd9997e335c6b54cc6c0b7599d6c.jpg');
+          "
+        >
+          <div class="container mx-auto px-4 py-24 md:py-32">
+            <div class="w-full max-w-2xl text-white">
+              <h1
+                class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-animation"
+              >
+                AI & Machine Learning Solutions
+              </h1>
+              <p
+                class="text-lg md:text-xl mb-8 opacity-90 text-animation text-animation-delay-1"
+              >
+                Transform your business with intelligent automation and
+                data-driven insights powered by our cutting-edge AI
+                technologies.
+              </p>
+              <div
+                class="flex flex-wrap gap-4 text-animation text-animation-delay-2"
+              >
+                <button
+                  class="bg-secondary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+                >
+                  AI Services
+                </button>
+                <button
+                  class="bg-white text-primary px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+                >
+                  Schedule Call
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-indicators">
+        <div class="carousel-indicator active"></div>
+        <div class="carousel-indicator"></div>
+        <div class="carousel-indicator"></div>
+      </div>
+    </section>
+    <!-- Featured Services -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Our Core Services
+          </h2>
+          <p class="text-gray-600 max-w-3xl mx-auto">
+            Deliver Embedded Software Solutions and R&D partnership
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="bg-white p-8 rounded-lg shadow-md card-animation animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-code-s-slash-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-primary">
+              Pre and Post Silicon Validation
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Pre and Post Silicon Validation for various IP blocks of Semiconductor chips like SoC and Microcontrollers
+            </p>
+            <a href="#" class="text-secondary font-medium flex items-center">
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <!-- Service 2 -->
+          <div
+            class="bg-white p-8 rounded-lg shadow-md card-animation animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-cloud-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-primary">IoT Solutions
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Design and development of complete design for customer-specific IoT solutions
+            </p>
+            <a href="#" class="text-secondary font-medium flex items-center">
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <!-- Service 3 -->
+          <div
+            class="bg-white p-8 rounded-lg shadow-md card-animation animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-database-2-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-primary">Automotive Solutions</h3>
+            <p class="text-gray-600 mb-6">
+              We provide services on Infotainment of Audio/Video processing over BT/WiFi modules
+            </p>
+            <a href="#" class="text-secondary font-medium flex items-center">
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <!-- Service 4 -->
+          <div
+            class="bg-white p-8 rounded-lg shadow-md card-animation animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-shield-check-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-primary">SW porting & bring-up for HW platforms
+            </h3>
+            <p class="text-gray-600 mb-6">
+              We support in RTOS/ Linux SW porting and solutions enable in customer-specific platforms
+
+            </p>
+            <a href="#" class="text-secondary font-medium flex items-center">
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <!-- Service 5 -->
+          <div
+            class="bg-white p-8 rounded-lg shadow-md card-animation animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-smartphone-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-primary">
+              Security Solutions
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Developed our own solutions and services for Security with High-resolution
+            </p>
+            <a href="#" class="text-secondary font-medium flex items-center">
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <!-- Service 6 -->
+        </div>
+      </div>
+    </section>
+    <!-- Key Statistics -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Our Impact in Numbers
+          </h2>
+          <p class="text-gray-600 max-w-3xl mx-auto">
+            We've helped businesses across industries achieve remarkable results
+            through technology innovation.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center animate-on-scroll">
+            <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
+              5
+            </div>
+            <p class="text-gray-600">Happy Clients</p>
+          </div>
+          <div class="text-center animate-on-scroll">
+            <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
+              13
+            </div>
+            <p class="text-gray-600">Projects</p>
+          </div>
+          <div class="text-center animate-on-scroll">
+            <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
+              1463
+            </div>
+            <p class="text-gray-600">Hours Of Support</p>
+          </div>
+          <div class="text-center animate-on-scroll">
+            <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
+              15
+            </div>
+            <p class="text-gray-600">Hard Workers</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Latest Projects -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-end mb-12">
+          <div class="animate-on-scroll">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+              Our Latest Projects
+            </h2>
+            <p class="text-gray-600 max-w-2xl">
+              Explore our recent work that demonstrates our expertise and
+              commitment to excellence.
+            </p>
+          </div>
+          <a
+            href="#"
+            class="hidden md:flex items-center text-secondary font-medium animate-on-scroll"
+          >
+            View All Projects
+            <i class="ri-arrow-right-line ml-2"></i>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-md card-animation animate-on-scroll"
+          >
+            <div class="h-56 overflow-hidden">
+              <img
+                src="https://public.readdy.ai/ai/img_res/1c0e83d6364844f08ac84ce124df1cef.jpg"
+                alt="FinTech App"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-3">
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded"
+                  >FinTech</span
+                >
+                <span class="text-gray-500 text-sm">Completed: Feb 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-2 text-primary">
+                NextGen Banking Platform
+              </h3>
+              <p class="text-gray-600 mb-4">
+                A comprehensive digital banking solution with advanced security
+                features and intuitive user experience.
+              </p>
+              <a href="#" class="text-secondary font-medium flex items-center">
+                View Case Study
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-md card-animation animate-on-scroll"
+          >
+            <div class="h-56 overflow-hidden">
+              <img
+                src="https://public.readdy.ai/ai/img_res/3a7f67d5c07c59de34df71affe96e26c.jpg"
+                alt="Healthcare Platform"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-3">
+                <span
+                  class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded"
+                  >Healthcare</span
+                >
+                <span class="text-gray-500 text-sm">Completed: Jan 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-2 text-primary">
+                MediConnect Platform
+              </h3>
+              <p class="text-gray-600 mb-4">
+                An integrated healthcare management system connecting patients,
+                providers, and insurers.
+              </p>
+              <a href="#" class="text-secondary font-medium flex items-center">
+                View Case Study
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-md card-animation animate-on-scroll"
+          >
+            <div class="h-56 overflow-hidden">
+              <img
+                src="https://public.readdy.ai/ai/img_res/30074eb59f1399bbeb5917150b867fb2.jpg"
+                alt="Manufacturing Solution"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-3">
+                <span
+                  class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded"
+                  >Manufacturing</span
+                >
+                <span class="text-gray-500 text-sm">Completed: Mar 2025</span>
+              </div>
+              <h3 class="text-xl font-bold mb-2 text-primary">
+                SmartFactory IoT Solution
+              </h3>
+              <p class="text-gray-600 mb-4">
+                An IoT-based manufacturing optimization system that increased
+                production efficiency by 35%.
+              </p>
+              <a href="#" class="text-secondary font-medium flex items-center">
+                View Case Study
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-10 text-center md:hidden">
+          <a
+            href="#"
+            class="inline-flex items-center text-secondary font-medium"
+          >
+            View All Projects
+            <i class="ri-arrow-right-line ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            What Our Clients Say
+          </h2>
+          <p class="text-gray-600 max-w-3xl mx-auto">
+            Hear from businesses that have transformed their operations with our
+            technology solutions.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-gray-50 p-8 rounded-lg animate-on-scroll">
+            <div class="flex items-center mb-6">
+              <div class="text-yellow-400 flex">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "MicroSysLogic transformed our outdated systems into a streamlined
+              digital platform that has significantly improved our operational
+              efficiency and customer experience."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4"
+              >
+                <i class="ri-user-3-line ri-lg text-gray-600"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Jennifer Reynolds</h4>
+                <p class="text-gray-500 text-sm">CTO, GlobalFinance Corp</p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="bg-gray-50 p-8 rounded-lg animate-on-scroll">
+            <div class="flex items-center mb-6">
+              <div class="text-yellow-400 flex">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "The custom software solution developed by MicroSysLogic has been
+              a game-changer for our business. Their team's expertise and
+              dedication to our project exceeded our expectations."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4"
+              >
+                <i class="ri-user-3-line ri-lg text-gray-600"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Michael Thornton</h4>
+                <p class="text-gray-500 text-sm">CEO, TechInnovate Inc</p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="bg-gray-50 p-8 rounded-lg animate-on-scroll">
+            <div class="flex items-center mb-6">
+              <div class="text-yellow-400 flex">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "Working with MicroSysLogic on our data analytics platform was a
+              seamless experience. Their team's technical knowledge and ability
+              to understand our business needs resulted in a solution that has
+              driven significant ROI."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4"
+              >
+                <i class="ri-user-3-line ri-lg text-gray-600"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Sophia Martinez</h4>
+                <p class="text-gray-500 text-sm">COO, DataDrive Solutions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Call to Action -->
+    <section class="py-16 md:py-24 bg-primary">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Transform Your Business with Technology?
+          </h2>
+          <p class="text-white text-opacity-90 text-lg mb-8">
+            Let's discuss how our innovative solutions can address your business
+            challenges and drive growth.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              class="bg-white text-primary px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+            >
+              Schedule a Consultation
+            </button>
+            <button
+              class="bg-transparent text-white border-2 border-white px-8 py-3 !rounded-button font-medium hover:bg-white hover:bg-opacity-10 transition-colors whitespace-nowrap"
+            >
+              Explore Our Services
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <a href="#" class="flex items-center mb-6">
+              <img
+                src="https://static.readdy.ai/image/b24679fa8378e170677a56ca770f2ea8/7ed7cafd3d5c6a28c37bee8fba78802a.jpeg"
+                alt="MicroSysLogic Logo"
+                class="h-10"
+              />
+            </a>
+            <p class="text-gray-400 mb-6">
+              Delivering innovative technology solutions that drive digital
+              transformation and business growth.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-twitter-x-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Services</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Custom Software Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Cloud Solutions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Data Analytics</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Cybersecurity</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Mobile App Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >AI & Machine Learning</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Contact Us</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1">
+                  <i class="ri-map-pin-line text-secondary"></i>
+                </div>
+                <span class="text-gray-400"
+                  >123 Tech Park, Silicon Valley, CA 94025, USA</span
+                >
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-phone-line text-secondary"></i>
+                </div>
+                <span class="text-gray-400">+1 (555) 123-4567</span>
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-mail-line text-secondary"></i>
+                </div>
+                <span class="text-gray-400">info@microsyslogic.com</span>
+              </li>
+            </ul>
+            <h3 class="text-lg font-bold mt-6 mb-4">
+              Subscribe to Our Newsletter
+            </h3>
+            <div class="flex">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="bg-gray-800 text-white px-4 py-2 w-full border-none rounded-l-button focus:ring-0"
+              />
+              <button
+                class="bg-secondary text-white px-4 py-2 !rounded-r-button !rounded-l-none whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2025 MicroSysLogic. All rights reserved.
+          </p>
+          <div class="flex space-x-6">
+            <a
+              href="#"
+              class="text-gray-400 text-sm hover:text-white transition-colors"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 text-sm hover:text-white transition-colors"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 text-sm hover:text-white transition-colors"
+              >Cookie Policy</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Custom checkbox functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const checkboxes = document.querySelectorAll(".custom-checkbox");
+        checkboxes.forEach((checkbox) => {
+          checkbox.addEventListener("click", function () {
+            this.classList.toggle("checked");
+          });
+        });
+        // Custom radio functionality
+        const radios = document.querySelectorAll(".custom-radio");
+        radios.forEach((radio) => {
+          radio.addEventListener("click", function () {
+            // Uncheck all radios in the same group
+            const name = this.getAttribute("data-name");
+            if (name) {
+              document
+                .querySelectorAll(`.custom-radio[data-name="${name}"]`)
+                .forEach((r) => {
+                  r.classList.remove("checked");
+                });
+            }
+            this.classList.add("checked");
+          });
+        });
+        // Scroll animation
+        const animatedElements =
+          document.querySelectorAll(".animate-on-scroll");
+        function checkScroll() {
+          animatedElements.forEach((element) => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (elementTop < windowHeight * 0.85) {
+              element.classList.add("visible");
+            }
+          });
+        }
+        // Initial check
+        checkScroll();
+        // Check on scroll
+        window.addEventListener("scroll", checkScroll);
+        // Carousel functionality
+        const carouselContainer = document.querySelector(".carousel-container");
+        const slides = document.querySelectorAll(".carousel-slide");
+        const indicators = document.querySelectorAll(".carousel-indicator");
+        let currentSlide = 0;
+        const slideCount = slides.length;
+        // Set initial slide animations
+        slides[0].querySelectorAll(".text-animation").forEach((el) => {
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        });
+        function updateCarousel() {
+          // Update container position
+          carouselContainer.style.transform = `translateX(-${
+            currentSlide * 100
+          }%)`;
+
+          // Update indicators
+          indicators.forEach((indicator, index) => {
+            if (index === currentSlide) {
+              indicator.classList.add("active");
+            } else {
+              indicator.classList.remove("active");
+            }
+          });
+
+          // Reset and trigger animations for current slide
+          slides.forEach((slide, index) => {
+            const animations = slide.querySelectorAll(".text-animation");
+            if (index === currentSlide) {
+              animations.forEach((el) => {
+                // Reset animation
+                el.style.opacity = "0";
+                el.style.transform = "translateY(30px)";
+
+                // Force reflow
+                void el.offsetWidth;
+
+                // Trigger animation
+                el.style.opacity = "1";
+                el.style.transform = "translateY(0)";
+                el.style.transition = "opacity 0.8s, transform 0.8s";
+              });
+            }
+          });
+        }
+        // Auto advance slides
+        function autoAdvance() {
+          currentSlide = (currentSlide + 1) % slideCount;
+          updateCarousel();
+        }
+        // Set up indicator clicks
+        indicators.forEach((indicator, index) => {
+          indicator.addEventListener("click", () => {
+            currentSlide = index;
+            updateCarousel();
+            resetAutoAdvanceTimer();
+          });
+        });
+        // Start auto-advance timer
+        let autoAdvanceTimer = setInterval(autoAdvance, 5000);
+        // Reset timer when manually changing slides
+        function resetAutoAdvanceTimer() {
+          clearInterval(autoAdvanceTimer);
+          autoAdvanceTimer = setInterval(autoAdvance, 5000);
+        }
+        // Initialize carousel
+        updateCarousel();
+      });
+    </script>
+  </body>
+</html>

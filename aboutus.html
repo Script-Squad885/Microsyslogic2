@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MicroSysLogic - Innovative Technology Solutions</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#1E3D59", secondary: "#17A2B8" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Poppins", sans-serif;
+      }
+      .hero-section {
+        position: relative;
+        overflow: hidden;
+      }
+      .carousel-container {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+        height: 100%;
+      }
+      .carousel-slide {
+        flex: 0 0 100%;
+        background-size: cover;
+        background-position: center;
+      }
+      .carousel-indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        z-index: 10;
+      }
+      .carousel-indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .carousel-indicator.active {
+        background-color: white;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+      }
+      .custom-checkbox {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #1e3d59;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .custom-checkbox.checked::after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 6px;
+        width: 6px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+      .custom-checkbox.checked {
+        background-color: #1e3d59;
+      }
+      .custom-switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+      }
+      .custom-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+      input:checked + .slider {
+        background-color: #1e3d59;
+      }
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+      .custom-range {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 6px;
+        border-radius: 5px;
+        background: #d3d3d3;
+        outline: none;
+      }
+      .custom-range::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #1e3d59;
+        cursor: pointer;
+      }
+      .custom-range::-moz-range-thumb {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #1e3d59;
+        cursor: pointer;
+      }
+      .custom-radio {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #1e3d59;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .custom-radio.checked::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #1e3d59;
+      }
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .text-animation {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s forwards;
+      }
+      .text-animation-delay-1 {
+        animation-delay: 0.2s;
+      }
+      .text-animation-delay-2 {
+        animation-delay: 0.4s;
+      }
+      .text-animation-delay-3 {
+        animation-delay: 0.6s;
+      }
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .logoi {
+        padding-left: 15px;
+        height: 80px;
+        width: 120px;
+        object-fit: cover;
+      }
+      #hdh {
+        height: 80px;
+        width: 100%;
+      }
+
+      .card-animation {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card-animation:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Header -->
+    <header id="hdh" class="sticky top-0 z-50 bg-white shadow-md">
+      <div
+        class="container mx-auto px-0 py-0 flex justify-between items-center"
+      >
+        <a href="index.html" class="flex items-center">
+          <img
+            class="logoi"
+            src="https://static.readdy.ai/image/b24679fa8378e170677a56ca770f2ea8/7ed7cafd3d5c6a28c37bee8fba78802a.jpeg"
+            alt="MicroSysLogic Logo"
+            class="h-10"
+          />
+        </a>
+        <nav class="hidden lg:flex space-x-8">
+          <a href="#" class="font-medium text-gray-700 hover:text-primary transition-colors"
+            >Home</a
+          >
+          <a
+            href="service.html"
+            class="font-medium text-gray-700 hover:text-primary transition-colors"
+            target="_parent"
+            >Services</a
+          >
+          <a
+            href="career.html"
+            class="font-medium text-gray-700 hover:text-primary transition-colors"
+            target="_parent"
+            >Careers</a
+          >
+          <a
+            href="#"
+            class="font-medium text-primary border-b-2 border-primary"
+            target="_parent"
+            >About Us</a
+          >
+          <a
+            href="#"
+            class="font-medium text-gray-700 hover:text-primary transition-colors"
+            target="_parent"
+            >Projects</a
+          >
+          <a
+            href="contactus.html"
+            class="font-medium text-gray-700 hover:text-primary transition-colors"
+            target="_parent"
+            >Contact</a
+          >
+        </nav>
+        <div class="lg:hidden w-10 h-10 flex items-center justify-center">
+          <i class="ri-menu-line ri-lg text-primary"></i>
+        </div>
+        <button
+          class="hidden lg:block bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+        >
+          Get in Touch
+        </button>
+      </div>
+    </header>
+
+    <section class="pt-24 bg-cover bg-center" style="background-image: url('https://public.readdy.ai/ai/img_res/a4b5c6d7e8f9g0h1i2j3k4l5m6n7o8p9.jpg');">
+      <div class="container mx-auto px-6 py-32 w-full">
+      <div class="max-w-2xl bg-white/90 p-10 rounded-lg backdrop-blur-sm">
+      <h1 class="text-5xl font-bold text-gray-900 mb-6">About Microsyslogic</h1>
+      <p class="text-xl text-gray-700 mb-8">Founded in 2010, we're a team of innovators and problem-solvers dedicated to transforming businesses through cutting-edge technology solutions.</p>
+      <div class="flex space-x-4">
+      <button class="bg-primary text-white px-8 py-3 rounded-button font-medium shadow-lg hover:bg-primary/90 transition-all whitespace-nowrap">Our Mission</button>
+      <button class="bg-white text-primary border border-primary px-8 py-3 rounded-button font-medium hover:bg-primary/5 transition-colors whitespace-nowrap">Meet Our Team</button>
+      </div>
+      </div>
+      </div>
+      </section>
+      
+      <!-- Company Overview -->
+      <section class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row gap-16 items-center">
+      <div class="md:w-1/2">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
+      <p class="text-lg text-gray-700 mb-6">Microsyslogic was founded with a clear vision: to help businesses leverage technology to achieve their full potential. What began as a small team of passionate technologists has grown into a global enterprise serving clients across industries.</p>
+      <p class="text-lg text-gray-700 mb-6">We believe that technology should empower, not complicate. Our solutions are designed with this philosophy at their core, delivering powerful capabilities through intuitive interfaces that anyone can use.</p>
+      <p class="text-lg text-gray-700">Today, we're proud to be trusted by organizations ranging from innovative startups to Fortune 500 companies, all seeking to transform their operations through intelligent technology solutions.</p>
+      </div>
+      <div class="md:w-1/2">
+      <img src="https://public.readdy.ai/ai/img_res/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7.jpg" alt="Microsyslogic Team" class="rounded-lg shadow-xl w-full">
+      </div>
+      </div>
+      </div>
+      </section>
+      
+      <!-- Mission & Values -->
+      <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Mission & Values</h2>
+      <p class="text-lg text-gray-700">Our mission is to empower organizations through innovative technology solutions that drive growth, efficiency, and competitive advantage. We're guided by a set of core values that shape everything we do.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+      <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+      <i class="ri-lightbulb-line ri-2x text-primary"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-3">Innovation</h3>
+      <p class="text-gray-600">We embrace creativity and forward-thinking to develop solutions that address both current needs and future challenges.</p>
+      </div>
+      
+      <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+      <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+      <i class="ri-shield-check-line ri-2x text-primary"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-3">Integrity</h3>
+      <p class="text-gray-600">We maintain the highest ethical standards in all our interactions, building trust through transparency and accountability.</p>
+      </div>
+      
+      <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+      <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+      <i class="ri-team-line ri-2x text-primary"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-3">Collaboration</h3>
+      <p class="text-gray-600">We believe in the power of diverse perspectives and work together to create solutions greater than the sum of their parts.</p>
+      </div>
+      
+      <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+      <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+      <i class="ri-customer-service-line ri-2x text-primary"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-3">Client Focus</h3>
+      <p class="text-gray-600">We put our clients at the center of everything we do, measuring our success by the value we create for them.</p>
+      </div>
+      
+      <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+      <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+      <i class="ri-award-line ri-2x text-primary"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-3">Excellence</h3>
+      <p class="text-gray-600">We strive for excellence in everything we do, continuously improving our processes, products, and services.</p>
+      </div>
+      
+      <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+      <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+      <i class="ri-recycle-line ri-2x text-primary"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-3">Sustainability</h3>
+      <p class="text-gray-600">We're committed to developing solutions that not only solve today's problems but also contribute to a better future for our planet.</p>
+      </div>
+      </div>
+      </div>
+      </section>
+      
+      <!-- Company History Timeline -->
+      <section class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-900 mb-16 text-center">Our Journey</h2>
+      
+      <div class="max-w-4xl mx-auto relative pl-8">
+      <div class="timeline-item">
+      <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">2010: The Beginning</h3>
+      <p class="text-gray-600">Microsyslogic was founded by a team of five technology enthusiasts with a vision to make enterprise technology more accessible and effective.</p>
+      </div>
+      </div>
+      
+      <div class="timeline-item">
+      <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">2012: First Major Client</h3>
+      <p class="text-gray-600">Secured our first enterprise client, a Fortune 500 manufacturing company, and delivered a custom cloud solution that increased their operational efficiency by 35%.</p>
+      </div>
+      </div>
+      
+      <div class="timeline-item">
+      <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">2015: International Expansion</h3>
+      <p class="text-gray-600">Opened our first international office in London, beginning our global expansion to better serve clients worldwide.</p>
+      </div>
+      </div>
+      
+      <div class="timeline-item">
+      <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">2018: Product Launch</h3>
+      <p class="text-gray-600">Launched our flagship product, DataInsight Pro, a comprehensive data analytics platform that has since been adopted by over 200 organizations globally.</p>
+      </div>
+      </div>
+      
+      <div class="timeline-item">
+      <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">2020: Pandemic Response</h3>
+      <p class="text-gray-600">Pivoted to help businesses navigate the challenges of remote work, developing rapid deployment solutions that enabled seamless transitions.</p>
+      </div>
+      </div>
+      
+      <div class="timeline-item">
+      <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">2023: AI Innovation</h3>
+      <p class="text-gray-600">Established our AI Research Division, focusing on developing practical applications of artificial intelligence for business operations.</p>
+      </div>
+      </div>
+      
+      <div class="timeline-item">
+      <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">2025: Today</h3>
+      <p class="text-gray-600">Now with over 500 employees across 12 global offices, we continue to innovate and expand our services to meet the evolving needs of our clients.</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      </section>
+      
+      <!-- Leadership Team -->
+      <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Our Leadership Team</h2>
+      <p class="text-lg text-gray-700 mb-16 text-center max-w-3xl mx-auto">Meet the experienced professionals who guide our strategy and operations, bringing decades of industry expertise to Microsyslogic.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+      <img src="https://public.readdy.ai/ai/img_res/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7.jpg" alt="Michael Richardson" class="w-full h-64 object-cover object-top">
+      <div class="p-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-1">Michael Richardson</h3>
+      <p class="text-primary mb-4">Chief Executive Officer</p>
+      <p class="text-gray-600 mb-4">With over 25 years of experience in technology leadership, Michael has guided Microsyslogic from its founding to become an industry leader in enterprise solutions.</p>
+      <div class="flex">
+      <a href="#" class="text-gray-500 hover:text-primary transition-colors mr-4">
+      <div class="w-8 h-8 flex items-center justify-center">
+      <i class="ri-linkedin-fill"></i>
+      </div>
+      </a>
+      <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+      <div class="w-8 h-8 flex items-center justify-center">
+      <i class="ri-twitter-fill"></i>
+      </div>
+      </a>
+      </div>
+      </div>
+      </div>
+      
+      <div class="bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+      <img src="https://public.readdy.ai/ai/img_res/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7.jpg" alt="Sarah Chen" class="w-full h-64 object-cover object-top">
+      <div class="p-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-1">Sarah Chen</h3>
+      <p class="text-primary mb-4">Chief Technology Officer</p>
+      <p class="text-gray-600 mb-4">Previously a lead engineer at Google, Sarah brings cutting-edge expertise in AI and cloud architecture to drive our technical innovation strategy.</p>
+      <div class="flex">
+      <a href="#" class="text-gray-500 hover:text-primary transition-colors mr-4">
+      <div class="w-8 h-8 flex items-center justify-center">
+      <i class="ri-linkedin-fill"></i>
+      </div>
+      </a>
+      <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+      <div class="w-8 h-8 flex items-center justify-center">
+      <i class="ri-twitter-fill"></i>
+      </div>
+      </a>
+      </div>
+      </div>
+      </div>
+      
+      <div class="bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+      <img src="https://public.readdy.ai/ai/img_res/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7.jpg" alt="David Washington" class="w-full h-64 object-cover object-top">
+      <div class="p-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-1">David Washington</h3>
+      <p class="text-primary mb-4">Chief Operations Officer</p>
+      <p class="text-gray-600 mb-4">David's background in operational excellence has been instrumental in scaling our global operations while maintaining our commitment to quality.</p>
+      <div class="flex">
+      <a href="#" class="text-gray-500 hover:text-primary transition-colors mr-4">
+      <div class="w-8 h-8 flex items-center justify-center">
+      <i class="ri-linkedin-fill"></i>
+      </div>
+      </a>
+      <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+      <div class="w-8 h-8 flex items-center justify-center">
+      <i class="ri-twitter-fill"></i>
+      </div>
+      </a>
+      </div>
+      </div>
+      </div>
+      
+      <div class="bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+      <img src="https://public.readdy.ai/ai/img_res/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7.jpg" alt="Priya Sharma" class="w-full h-64 object-cover object-top">
+      <div class="p-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-1">Priya Sharma</h3>
+      <p class="text-primary mb-4">Chief Financial Officer</p>
+      <p class="text-gray-600 mb-4">With an MBA from Harvard and experience at top financial institutions, Priya ensures our financial strategy supports sustainable growth.</p>
+      <div class="flex">
+      <a href="#" class="text-gray-500 hover:text-primary transition-colors mr-4">
+      <div class="w-8 h-8 flex items-center justify-center">
+      <i class="ri-linkedin-fill"></i>
+      </div>
+      </a>
+      <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+      <div class="w-8 h-8 flex items-center justify-center">
+      <i class="ri-twitter-fill"></i>
+      </div>
+      </a>
+      </div>
+      </div>
+      </div>
+      
+      <div class="bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+      <img src="https://public.readdy.ai/ai/img_res/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7.jpg" alt="Carlos Rodriguez" class="w-full h-64 object-cover object-top">
+      <div class="p-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-1">Carlos Rodriguez</h3>
+      <p class="text-primary mb-4">Chief Marketing Officer</p>
+      <p class="text-gray-600 mb-4">Carlos has transformed our market presence through innovative digital strategies and a deep understanding of B2B technology marketing.</p>
+      <div class="flex">
+      <a href="#" class="text-gray-500 hover:text-primary transition-colors mr-4">
+      <div class="w-8 h-8 flex items-center justify-center">
+      <i class="ri-linkedin-fill"></i>
+      </div>
+      </a>
+      <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+      <div class="w-8 h-8 flex items-center justify-center">
+      <i class="ri-twitter-fill"></i>
+      </div>
+      </a>
+      </div>
+      </div>
+      </div>
+      
+      <div class="bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+      <img src="https://public.readdy.ai/ai/img_res/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7.jpg" alt="Jennifer Lee" class="w-full h-64 object-cover object-top">
+      <div class="p-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-1">Jennifer Lee</h3>
+      <p class="text-primary mb-4">Chief Human Resources Officer</p>
+      <p class="text-gray-600 mb-4">Jennifer has built our people-first culture, implementing innovative programs that have made us a top employer in the tech industry.</p>
+      <div class="flex">
+      <a href="#" class="text-gray-500 hover:text-primary transition-colors mr-4">
+      <div class="w-8 h-8 flex items-center justify-center">
+      <i class="ri-linkedin-fill"></i>
+      </div>
+      </a>
+      <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+      <div class="w-8 h-8 flex items-center justify-center">
+      <i class="ri-twitter-fill"></i>
+      </div>
+      </a>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </section>
+      
+      <!-- Company Culture -->
+      <section class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row gap-16 items-center">
+      <div class="md:w-1/2">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Culture</h2>
+      <p class="text-lg text-gray-700 mb-6">At Microsyslogic, we've built a culture that celebrates innovation, collaboration, and personal growth. We believe that the best solutions come from teams that are diverse, engaged, and empowered.</p>
+      <p class="text-lg text-gray-700 mb-6">Our offices are designed to foster creativity and connection, with open spaces for collaboration and quiet areas for focused work. We encourage a healthy work-life balance through flexible schedules and comprehensive wellness programs.</p>
+      <p class="text-lg text-gray-700">Regular team events, from hackathons to volunteer days, strengthen our community and remind us that while technology is our business, people are our priority.</p>
+      </div>
+      <div class="md:w-1/2 grid grid-cols-2 gap-4">
+      <img src="https://public.readdy.ai/ai/img_res/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7.jpg" alt="Office Collaboration" class="rounded-lg shadow-md w-full">
+      <img src="https://public.readdy.ai/ai/img_res/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7.jpg" alt="Team Building" class="rounded-lg shadow-md w-full">
+      <img src="https://public.readdy.ai/ai/img_res/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7.jpg" alt="Company Celebration" class="rounded-lg shadow-md w-full">
+      <img src="https://public.readdy.ai/ai/img_res/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7.jpg" alt="Volunteer Day" class="rounded-lg shadow-md w-full">
+      </div>
+      </div>
+      </div>
+      </section>
+      
+      <!-- Achievements Section -->
+      <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Our Achievements</h2>
+      <p class="text-lg text-gray-700 mb-16 text-center max-w-3xl mx-auto">We're proud of the impact we've made and the recognition we've received for our innovative solutions and workplace excellence.</p>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+      <div class="bg-white p-8 rounded-lg shadow-md text-center">
+      <div class="text-4xl font-bold text-primary mb-2 counter-value" data-target="500">0</div>
+      <p class="text-lg text-gray-600">Global Employees</p>
+      </div>
+      
+      <div class="bg-white p-8 rounded-lg shadow-md text-center">
+      <div class="text-4xl font-bold text-primary mb-2 counter-value" data-target="1500">0</div>
+      <p class="text-lg text-gray-600">Projects Completed</p>
+      </div>
+      
+      <div class="bg-white p-8 rounded-lg shadow-md text-center">
+      <div class="text-4xl font-bold text-primary mb-2 counter-value" data-target="300">0</div>
+      <p class="text-lg text-gray-600">Enterprise Clients</p>
+      </div>
+      
+      <div class="bg-white p-8 rounded-lg shadow-md text-center">
+      <div class="text-4xl font-bold text-primary mb-2 counter-value" data-target="12">0</div>
+      <p class="text-lg text-gray-600">Global Offices</p>
+      </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+      <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+      <i class="ri-award-line ri-2x text-primary"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-3">Industry Recognition</h3>
+      <ul class="text-gray-600 space-y-2">
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-check-line"></i>
+      </div>
+      <span>Gartner Magic Quadrant Leader for Cloud Solutions (2023-2025)</span>
+      </li>
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-check-line"></i>
+      </div>
+      <span>Forrester Wave Top Performer in Enterprise Software (2024)</span>
+      </li>
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-check-line"></i>
+      </div>
+      <span>CIO Review's 20 Most Promising Technology Solution Providers</span>
+      </li>
+      </ul>
+      </div>
+      <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+      <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+      <i class="ri-building-line ri-2x text-primary"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-3">Business Growth</h3>
+      <ul class="text-gray-600 space-y-2">
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-check-line"></i>
+      </div>
+      <span>35% annual growth rate over the past 5 years</span>
+      </li>
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-check-line"></i>
+      </div>
+      <span>Expanded to 12 global offices across 8 countries</span>
+      </li>
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-check-line"></i>
+      </div>
+      <span>Successfully launched 5 enterprise software products</span>
+      </li>
+      </ul>
+      </div>
+      
+      <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+      <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+      <i class="ri-team-line ri-2x text-primary"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-3">Workplace Excellence</h3>
+      <ul class="text-gray-600 space-y-2">
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-check-line"></i>
+      </div>
+      <span>Fortune's 100 Best Companies to Work For (2023-2025)</span>
+      </li>
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-check-line"></i>
+      </div>
+      <span>Great Place to Work Certified (5 consecutive years)</span>
+      </li>
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-check-line"></i>
+      </div>
+      <span>Diversity & Inclusion Excellence Award (2024)</span>
+      </li>
+      </ul>
+      </div>
+      </div>
+      </div>
+      </section>
+      
+      <!-- Global Presence -->
+      <section class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Our Global Presence</h2>
+      <p class="text-lg text-gray-700 mb-16 text-center max-w-3xl mx-auto">With offices across North America, Europe, Asia, and Australia, we provide localized support while leveraging our global expertise.</p>
+      <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-100 mb-12">
+    
+      </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+      <h3 class="text-xl font-semibold text-gray-800 mb-3">North America</h3>
+      <ul class="text-gray-600 space-y-4">
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-map-pin-line"></i>
+      </div>
+      <div>
+      <p class="font-medium">San Francisco (HQ)</p>
+      <p>1250 Technology Drive, San Francisco, CA 94105</p>
+      </div>
+      </li>
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-map-pin-line"></i>
+      </div>
+      <div>
+      <p class="font-medium">New York</p>
+      <p>350 Madison Avenue, New York, NY 10017</p>
+      </div>
+      </li>
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-map-pin-line"></i>
+      </div>
+      <div>
+      <p class="font-medium">Toronto</p>
+      <p>200 Bay Street, Toronto, ON M5J 2J2</p>
+      </div>
+      </li>
+      </ul>
+      </div>
+      
+      <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+      <h3 class="text-xl font-semibold text-gray-800 mb-3">Europe</h3>
+      <ul class="text-gray-600 space-y-4">
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-map-pin-line"></i>
+      </div>
+      <div>
+      <p class="font-medium">London</p>
+      <p>30 St Mary Axe, London EC3A 8BF</p>
+      </div>
+      </li>
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-map-pin-line"></i>
+      </div>
+      <div>
+      <p class="font-medium">Berlin</p>
+      <p>Friedrichstraße 68, 10117 Berlin</p>
+      </div>
+      </li>
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-map-pin-line"></i>
+      </div>
+      <div>
+      <p class="font-medium">Amsterdam</p>
+      <p>Gustav Mahlerlaan 2970, 1081 LA Amsterdam</p>
+      </div>
+      </li>
+      </ul>
+      </div>
+      
+      <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+      <h3 class="text-xl font-semibold text-gray-800 mb-3">Asia Pacific</h3>
+      <ul class="text-gray-600 space-y-4">
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-map-pin-line"></i>
+      </div>
+      <div>
+      <p class="font-medium">Singapore</p>
+      <p>One Raffles Quay, North Tower, Singapore 048583</p>
+      </div>
+      </li>
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-map-pin-line"></i>
+      </div>
+      <div>
+      <p class="font-medium">Tokyo</p>
+      <p>Marunouchi Building, 2-4-1 Marunouchi, Chiyoda-ku</p>
+      </div>
+      </li>
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-map-pin-line"></i>
+      </div>
+      <div>
+      <p class="font-medium">Sydney</p>
+      <p>1 O'Connell Street, Sydney NSW 2000</p>
+      </div>
+      </li>
+      </ul>
+      </div>
+      
+      <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+      <h3 class="text-xl font-semibold text-gray-800 mb-3">Emerging Markets</h3>
+      <ul class="text-gray-600 space-y-4">
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-map-pin-line"></i>
+      </div>
+      <div>
+      <p class="font-medium">Dubai</p>
+      <p>Dubai Internet City, Building 14, Dubai, UAE</p>
+      </div>
+      </li>
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-map-pin-line"></i>
+      </div>
+      <div>
+      <p class="font-medium">São Paulo</p>
+      <p>Av. Brigadeiro Faria Lima, 3477, São Paulo</p>
+      </div>
+      </li>
+      <li class="flex items-start">
+      <div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+      <i class="ri-map-pin-line"></i>
+      </div>
+      <div>
+      <p class="font-medium">Johannesburg</p>
+      <p>90 Rivonia Road, Sandton, Johannesburg</p>
+      </div>
+      </li>
+      </ul>
+      </div>
+      </div>
+      </div>
+      </section>
+      
+      <!-- Client Testimonials -->
+      <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">What Our Clients Say</h2>
+      <p class="text-lg text-gray-700 mb-16 text-center max-w-3xl mx-auto">Don't just take our word for it. Hear from some of the organizations we've helped transform through technology.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+      <div class="flex items-center mb-6">
+      <i class="ri-double-quotes-l text-primary text-3xl mr-2"></i>
+      </div>
+      <p class="text-gray-600 mb-6 italic">"Microsyslogic's cloud migration solution transformed our operations, reducing costs by 40% while improving system reliability. Their team's expertise and support throughout the process was exceptional."</p>
+      <div class="flex items-center">
+      <img src="https://public.readdy.ai/ai/img_res/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7.jpg" alt="Robert Johnson" class="w-12 h-12 rounded-full mr-4">
+      <div>
+      <h3 class="text-lg font-semibold text-gray-800">Robert Johnson</h3>
+      <p class="text-primary">CIO, Global Manufacturing Inc.</p>
+      </div>
+      </div>
+      </div>
+      
+      <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+      <div class="flex items-center mb-6">
+      <i class="ri-double-quotes-l text-primary text-3xl mr-2"></i>
+      </div>
+      <p class="text-gray-600 mb-6 italic">"The data analytics platform Microsyslogic implemented has given us unprecedented insights into customer behavior, directly contributing to a 25% increase in customer retention and significant revenue growth."</p>
+      <div class="flex items-center">
+      <img src="https://public.readdy.ai/ai/img_res/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7.jpg" alt="Lisa Wong" class="w-12 h-12 rounded-full mr-4">
+      <div>
+      <h3 class="text-lg font-semibold text-gray-800">Lisa Wong</h3>
+      <p class="text-primary">CMO, Retail Solutions Group</p>
+      </div>
+      </div>
+      </div>
+      
+      <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+      <div class="flex items-center mb-6">
+      <i class="ri-double-quotes-l text-primary text-3xl mr-2"></i>
+      </div>
+      <p class="text-gray-600 mb-6 italic">"Working with Microsyslogic on our digital transformation initiative has been a game-changer. Their strategic approach and technical expertise helped us modernize our entire infrastructure while minimizing disruption."</p>
+      <div class="flex items-center">
+      <img src="https://public.readdy.ai/ai/img_res/1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7.jpg" alt="Ahmed Al-Farsi" class="w-12 h-12 rounded-full mr-4">
+      <div>
+      <h3 class="text-lg font-semibold text-gray-800">Ahmed Al-Farsi</h3>
+      <p class="text-primary">CTO, Emirates Financial Services</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      
+      <div class="flex flex-wrap justify-center mt-16 gap-8 max-w-4xl mx-auto">
+      <div class="w-32 h-16 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all">
+      <div class="w-10 h-10 flex items-center justify-center">
+      <i class="ri-microsoft-fill ri-3x text-gray-500"></i>
+      </div>
+      </div>
+      <div class="w-32 h-16 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all">
+      <div class="w-10 h-10 flex items-center justify-center">
+      <i class="ri-amazon-fill ri-3x text-gray-500"></i>
+      </div>
+      </div>
+      <div class="w-32 h-16 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all">
+      <div class="w-10 h-10 flex items-center justify-center">
+      <i class="ri-google-fill ri-3x text-gray-500"></i>
+      </div>
+      </div>
+      <div class="w-32 h-16 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all">
+      <div class="w-10 h-10 flex items-center justify-center">
+      <i class="ri-netflix-fill ri-3x text-gray-500"></i>
+      </div>
+      </div>
+      <div class="w-32 h-16 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all">
+      <div class="w-10 h-10 flex items-center justify-center">
+      <i class="ri-spotify-fill ri-3x text-gray-500"></i>
+      </div>
+      </div>
+      <div class="w-32 h-16 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all">
+      <div class="w-10 h-10 flex items-center justify-center">
+      <i class="ri-airbnb-fill ri-3x text-gray-500"></i>
+      </div>
+      </div>
+      <div class="w-32 h-16 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all">
+      <div class="w-10 h-10 flex items-center justify-center">
+      <i class="ri-pinterest-fill ri-3x text-gray-500"></i>
+      </div>
+      </div>
+      <div class="w-32 h-16 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all">
+      <div class="w-10 h-10 flex items-center justify-center">
+      <i class="ri-slack-fill ri-3x text-gray-500"></i>
+      </div>
+      </div>
+      </div>
+      </div>
+      </section>
+      
+      <!-- CTA Section -->
+      <section class="py-20 bg-primary">
+      <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
+      <p class="text-xl text-white/90 mb-10 max-w-3xl mx-auto">Partner with Microsyslogic to leverage cutting-edge technology solutions that drive growth, efficiency, and innovation.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#" class="bg-white text-primary px-8 py-3 rounded-button font-medium shadow-lg hover:bg-gray-100 transition-all whitespace-nowrap">Contact Us</a>
+      <a href="https://readdy.ai/home/88a11985-d446-43f7-a302-a1e2d71ecd32/fd4e2021-f13f-41b6-b1c5-18149e5aa198" data-readdy="true" class="bg-transparent text-white border border-white px-8 py-3 rounded-button font-medium hover:bg-white/10 transition-colors whitespace-nowrap">View Careers</a>
+      </div>
+      </div>
+      </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <a href="#" class="flex items-center mb-6">
+              <img
+                src="https://static.readdy.ai/image/b24679fa8378e170677a56ca770f2ea8/7ed7cafd3d5c6a28c37bee8fba78802a.jpeg"
+                alt="MicroSysLogic Logo"
+                class="h-10"
+              />
+            </a>
+            <p class="text-gray-400 mb-6">
+              Delivering innovative technology solutions that drive digital
+              transformation and business growth.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-twitter-x-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Services</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Custom Software Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Cloud Solutions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Data Analytics</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Cybersecurity</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Mobile App Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >AI & Machine Learning</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Contact Us</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1">
+                  <i class="ri-map-pin-line text-secondary"></i>
+                </div>
+                <span class="text-gray-400"
+                  >123 Tech Park, Silicon Valley, CA 94025, USA</span
+                >
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-phone-line text-secondary"></i>
+                </div>
+                <span class="text-gray-400">+1 (555) 123-4567</span>
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-mail-line text-secondary"></i>
+                </div>
+                <span class="text-gray-400">info@microsyslogic.com</span>
+              </li>
+            </ul>
+            <h3 class="text-lg font-bold mt-6 mb-4">
+              Subscribe to Our Newsletter
+            </h3>
+            <div class="flex">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="bg-gray-800 text-white px-4 py-2 w-full border-none rounded-l-button focus:ring-0"
+              />
+              <button
+                class="bg-secondary text-white px-4 py-2 !rounded-r-button !rounded-l-none whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2025 MicroSysLogic. All rights reserved.
+          </p>
+          <div class="flex space-x-6">
+            <a
+              href="#"
+              class="text-gray-400 text-sm hover:text-white transition-colors"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 text-sm hover:text-white transition-colors"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 text-sm hover:text-white transition-colors"
+              >Cookie Policy</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Custom checkbox functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const checkboxes = document.querySelectorAll(".custom-checkbox");
+        checkboxes.forEach((checkbox) => {
+          checkbox.addEventListener("click", function () {
+            this.classList.toggle("checked");
+          });
+        });
+        // Custom radio functionality
+        const radios = document.querySelectorAll(".custom-radio");
+        radios.forEach((radio) => {
+          radio.addEventListener("click", function () {
+            // Uncheck all radios in the same group
+            const name = this.getAttribute("data-name");
+            if (name) {
+              document
+                .querySelectorAll(`.custom-radio[data-name="${name}"]`)
+                .forEach((r) => {
+                  r.classList.remove("checked");
+                });
+            }
+            this.classList.add("checked");
+          });
+        });
+        // Scroll animation
+        const animatedElements =
+          document.querySelectorAll(".animate-on-scroll");
+        function checkScroll() {
+          animatedElements.forEach((element) => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (elementTop < windowHeight * 0.85) {
+              element.classList.add("visible");
+            }
+          });
+        }
+        // Initial check
+        checkScroll();
+        // Check on scroll
+        window.addEventListener("scroll", checkScroll);
+        // Carousel functionality
+        const carouselContainer = document.querySelector(".carousel-container");
+        const slides = document.querySelectorAll(".carousel-slide");
+        const indicators = document.querySelectorAll(".carousel-indicator");
+        let currentSlide = 0;
+        const slideCount = slides.length;
+        // Set initial slide animations
+        slides[0].querySelectorAll(".text-animation").forEach((el) => {
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        });
+        function updateCarousel() {
+          // Update container position
+          carouselContainer.style.transform = `translateX(-${
+            currentSlide * 100
+          }%)`;
+
+          // Update indicators
+          indicators.forEach((indicator, index) => {
+            if (index === currentSlide) {
+              indicator.classList.add("active");
+            } else {
+              indicator.classList.remove("active");
+            }
+          });
+
+          // Reset and trigger animations for current slide
+          slides.forEach((slide, index) => {
+            const animations = slide.querySelectorAll(".text-animation");
+            if (index === currentSlide) {
+              animations.forEach((el) => {
+                // Reset animation
+                el.style.opacity = "0";
+                el.style.transform = "translateY(30px)";
+
+                // Force reflow
+                void el.offsetWidth;
+
+                // Trigger animation
+                el.style.opacity = "1";
+                el.style.transform = "translateY(0)";
+                el.style.transition = "opacity 0.8s, transform 0.8s";
+              });
+            }
+          });
+        }
+        // Auto advance slides
+        function autoAdvance() {
+          currentSlide = (currentSlide + 1) % slideCount;
+          updateCarousel();
+        }
+        // Set up indicator clicks
+        indicators.forEach((indicator, index) => {
+          indicator.addEventListener("click", () => {
+            currentSlide = index;
+            updateCarousel();
+            resetAutoAdvanceTimer();
+          });
+        });
+        // Start auto-advance timer
+        let autoAdvanceTimer = setInterval(autoAdvance, 5000);
+        // Reset timer when manually changing slides
+        function resetAutoAdvanceTimer() {
+          clearInterval(autoAdvanceTimer);
+          autoAdvanceTimer = setInterval(autoAdvance, 5000);
+        }
+        // Initialize carousel
+        updateCarousel();
+      });
+    </script>
+  </body>
+</html>

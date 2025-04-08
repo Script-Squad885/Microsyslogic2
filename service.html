@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services | TechSolutions</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#1E3D59", secondary: "#17A2B8"},
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Remove any potential undefined text */
+      body::before {
+        content: none !important;
+        display: none !important;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: none;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      .custom-checkbox {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        border: 2px solid #d1d5db;
+        background-color: white;
+        transition: all 0.2s ease;
+      }
+      .custom-checkbox.checked {
+        background-color: rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+      #sec-c {
+        background-color: rgb(30 61 89 / var(--tw-bg-opacity, 1));
+      }
+      .custom-checkbox.checked::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 5px;
+        height: 10px;
+        border-bottom: 2px solid white;
+        border-right: 2px solid white;
+      }
+      .custom-switch {
+        position: relative;
+        display: inline-block;
+        width: 48px;
+        height: 24px;
+        border-radius: 12px;
+        background-color: #d1d5db;
+        transition: all 0.3s ease;
+      }
+      .custom-switch.active {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      .custom-switch::after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: white;
+        transition: all 0.3s ease;
+      }
+      #btn-c {
+        background-color: rgb(30 61 89 / var(--tw-bg-opacity, 1));
+      }
+      .custom-switch.active::after {
+        left: 26px;
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .case-study-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .logoi {
+        padding-left: 15px;
+        height: 80px;
+        width: 120px;
+        object-fit: cover;
+      }
+      #hdh {
+        height: 80px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header id="hdh" class="sticky top-0 z-50 bg-white shadow-md">
+      <div
+        class="container mx-auto px-0 py-0 flex justify-between items-center"
+      >
+        <a href="index.html" class="flex items-center">
+          <img
+            class="logoi"
+            src="https://static.readdy.ai/image/b24679fa8378e170677a56ca770f2ea8/7ed7cafd3d5c6a28c37bee8fba78802a.jpeg"
+            alt="MicroSysLogic Logo"
+            class="h-10"
+          />
+        </a>
+        <nav class="hidden lg:flex space-x-8">
+          <a href="h3.html" class="font-medium text-gray-700 hover:text-primary transition-colors "
+            >Home</a
+          >
+          <a
+            href="#"
+            class="font-medium text-primary border-b-2 border-primary"
+            target="_parent"
+            >Services</a
+          >
+          <a
+            href="career.html"
+            class="font-medium text-gray-700 hover:text-primary transition-colors"
+            target="_parent"
+            >Careers</a
+          >
+          <a
+            href="aboutus.html"
+            class="font-medium text-gray-700 hover:text-primary transition-colors"
+            target="_parent"
+            >About Us</a
+          >
+          <a
+            href="#"
+            class="font-medium text-gray-700 hover:text-primary transition-colors"
+            target="_parent"
+            >Projects</a
+          >
+          <a
+            href="contactus.html"
+            class="font-medium text-gray-700 hover:text-primary transition-colors"
+            target="_parent"
+            >Contact</a
+          >
+        </nav>
+        <div class="lg:hidden w-10 h-10 flex items-center justify-center">
+          <i class="ri-menu-line ri-lg text-primary"></i>
+        </div>
+        <button
+          class="hidden lg:block bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+        >
+          Get in Touch
+        </button>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative">
+      <div
+        style="
+          background-image: url('https://public.readdy.ai/ai/img_res/e8c843b67b1202f539cde116468d2de2.jpg');
+        "
+        class="bg-cover bg-center h-96 relative"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-700/50"
+        ></div>
+        <div
+          class="container mx-auto px-4 h-full flex flex-col justify-center relative z-10"
+        >
+          <div class="max-w-3xl">
+            <div class="text-white text-sm mb-4">
+              <a href="#" class="hover:text-blue-200">Home</a> &gt;
+              <span class="font-medium">Services</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+              Our Services & Solutions
+            </h1>
+            <p class="text-lg text-blue-100 mb-8">
+              We deliver cutting-edge technology solutions tailored to your
+              business needs. Our comprehensive service portfolio helps
+              organizations transform, innovate, and thrive in the digital era.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <button
+                class="bg-white text-primary px-6 py-3 !rounded-button font-medium hover:bg-gray-100 transition-colors shadow-lg whitespace-nowrap"
+              >
+                Explore Services
+              </button>
+              <button
+                class="bg-transparent border-2 border-white text-white px-6 py-3 !rounded-button font-medium hover:bg-white/10 transition-colors whitespace-nowrap"
+              >
+                Schedule Consultation
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Overview -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Our Core Services
+          </h2>
+          <p class="text-gray-600 max-w-3xl mx-auto">
+            Deliver Embedded Software Solutions and R&D partnership
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="bg-white p-8 rounded-lg shadow-md card-animation animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-code-s-slash-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-primary">
+              Pre and Post Silicon Validation
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Pre and Post Silicon Validation for various IP blocks of Semiconductor chips like SoC and Microcontrollers
+            </p>
+            <a href="#" class="text-secondary font-medium flex items-center">
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <!-- Service 2 -->
+          <div
+            class="bg-white p-8 rounded-lg shadow-md card-animation animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-cloud-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-primary">IoT Solutions
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Design and development of complete design for customer-specific IoT solutions
+            </p>
+            <a href="#" class="text-secondary font-medium flex items-center">
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <!-- Service 3 -->
+          <div
+            class="bg-white p-8 rounded-lg shadow-md card-animation animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-database-2-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-primary">Automotive Solutions</h3>
+            <p class="text-gray-600 mb-6">
+              We provide services on Infotainment of Audio/Video processing over BT/WiFi modules
+            </p>
+            <a href="#" class="text-secondary font-medium flex items-center">
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <!-- Service 4 -->
+          <div
+            class="bg-white p-8 rounded-lg shadow-md card-animation animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-shield-check-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-primary">SW porting & bring-up for HW platforms
+            </h3>
+            <p class="text-gray-600 mb-6">
+              We support in RTOS/ Linux SW porting and solutions enable in customer-specific platforms
+
+            </p>
+            <a href="#" class="text-secondary font-medium flex items-center">
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <!-- Service 5 -->
+          <div
+            class="bg-white p-8 rounded-lg shadow-md card-animation animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-smartphone-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-primary">
+              Security Solutions
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Developed our own solutions and services for Security with High-resolution
+            </p>
+            <a href="#" class="text-secondary font-medium flex items-center">
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <!-- Service 6 -->
+        </div>
+      </div>
+    </section>
+    <!-- Methodology Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Our Service Delivery Methodology
+          </h2>
+          <p class="text-gray-600">
+            We follow a proven methodology to ensure consistent, high-quality
+            results for every project. Our structured approach combines agility
+            with rigorous quality control.
+          </p>
+        </div>
+        <div
+          class="flex flex-col md:flex-row items-center justify-center gap-8 max-w-5xl mx-auto"
+        >
+          <!-- Step 1 -->
+          <div class="w-full md:w-1/4 text-center">
+            <div
+              class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-search-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">1. Discovery</h3>
+            <p class="text-gray-600 text-sm">
+              We analyze your requirements and business objectives to create a
+              tailored solution strategy.
+            </p>
+          </div>
+          <div
+            class="hidden md:block w-12 h-1 md:w-1 md:h-12 bg-gray-300"
+          ></div>
+          <!-- Step 2 -->
+          <div class="w-full md:w-1/4 text-center">
+            <div
+              class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-layout-2-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">2. Planning</h3>
+            <p class="text-gray-600 text-sm">
+              We design the architecture, create detailed specifications, and
+              establish project milestones.
+            </p>
+          </div>
+          <div
+            class="hidden md:block w-12 h-1 md:w-1 md:h-12 bg-gray-300"
+          ></div>
+          <!-- Step 3 -->
+          <div class="w-full md:w-1/4 text-center">
+            <div
+              class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-code-box-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">3. Development</h3>
+            <p class="text-gray-600 text-sm">
+              Our expert team builds your solution using agile methodologies
+              with regular reviews and iterations.
+            </p>
+          </div>
+          <div
+            class="hidden md:block w-12 h-1 md:w-1 md:h-12 bg-gray-300"
+          ></div>
+          <!-- Step 4 -->
+          <div class="w-full md:w-1/4 text-center">
+            <div
+              class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-rocket-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">4. Deployment</h3>
+            <p class="text-gray-600 text-sm">
+              We implement, test, and launch your solution with comprehensive
+              training and ongoing support.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Case Studies Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Success Stories</h2>
+          <p class="text-gray-600">
+            See how our services have helped organizations across industries
+            achieve their business objectives and drive digital transformation.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Case Study 1 -->
+          <div
+            class="case-study-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition-all duration-300"
+          >
+            <div class="h-48 bg-gray-200 relative">
+              <img
+                src="https://public.readdy.ai/ai/img_res/81fffa32f4da9fdf0a8bd8ea378a6f77.jpg"
+                alt="Financial Services Case Study"
+                class="w-full h-full object-cover object-top"
+              />
+              <div
+                class="absolute top-4 left-4 bg-white py-1 px-3 rounded-full text-sm font-medium text-gray-700"
+              >
+                Financial Services
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Global Bank Digital Transformation
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Implemented a cloud-based solution that modernized legacy
+                systems and improved customer experience.
+              </p>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                  <div
+                    class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-2"
+                  >
+                    <i class="ri-bank-line text-primary"></i>
+                  </div>
+                  <span class="text-sm text-gray-500"
+                    >Major Financial Institution</span
+                  >
+                </div>
+              </div>
+              <div class="space-y-2 mb-6">
+                <div class="flex items-center text-sm">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center mr-2 text-green-500"
+                  >
+                    <i class="ri-arrow-up-line"></i>
+                  </div>
+                  <span class="text-gray-700"
+                    >42% increase in digital transactions</span
+                  >
+                </div>
+                <div class="flex items-center text-sm">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center mr-2 text-green-500"
+                  >
+                    <i class="ri-arrow-down-line"></i>
+                  </div>
+                  <span class="text-gray-700"
+                    >68% reduction in processing time</span
+                  >
+                </div>
+              </div>
+              <button
+                class="text-primary font-medium flex items-center hover:text-blue-700 transition-colors whitespace-nowrap"
+              >
+                View case study
+                <i class="ri-arrow-right-line ml-1"></i>
+              </button>
+            </div>
+          </div>
+          <!-- Case Study 2 -->
+          <div
+            class="case-study-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition-all duration-300"
+          >
+            <div class="h-48 bg-gray-200 relative">
+              <img
+                src="https://public.readdy.ai/ai/img_res/9c0736aa3c657d8c9903c68903e99145.jpg"
+                alt="Healthcare Case Study"
+                class="w-full h-full object-cover object-top"
+              />
+              <div
+                class="absolute top-4 left-4 bg-white py-1 px-3 rounded-full text-sm font-medium text-gray-700"
+              >
+                Healthcare
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Healthcare Provider AI Solution
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Developed an AI-powered diagnostic assistant that improved
+                patient outcomes and reduced clinician workload.
+              </p>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                  <div
+                    class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-2"
+                  >
+                    <i class="ri-heart-pulse-line text-primary"></i>
+                  </div>
+                  <span class="text-sm text-gray-500"
+                    >National Hospital Network</span
+                  >
+                </div>
+              </div>
+              <div class="space-y-2 mb-6">
+                <div class="flex items-center text-sm">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center mr-2 text-green-500"
+                  >
+                    <i class="ri-arrow-up-line"></i>
+                  </div>
+                  <span class="text-gray-700"
+                    >93% diagnostic accuracy rate</span
+                  >
+                </div>
+                <div class="flex items-center text-sm">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center mr-2 text-green-500"
+                  >
+                    <i class="ri-arrow-down-line"></i>
+                  </div>
+                  <span class="text-gray-700"
+                    >35% reduction in diagnostic time</span
+                  >
+                </div>
+              </div>
+              <button
+                class="text-primary font-medium flex items-center hover:text-blue-700 transition-colors whitespace-nowrap"
+              >
+                View case study
+                <i class="ri-arrow-right-line ml-1"></i>
+              </button>
+            </div>
+          </div>
+          <!-- Case Study 3 -->
+          <div
+            class="case-study-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition-all duration-300"
+          >
+            <div class="h-48 bg-gray-200 relative">
+              <img
+                src="https://public.readdy.ai/ai/img_res/e478258287e421f89b538abca492ee45.jpg"
+                alt="Retail Case Study"
+                class="w-full h-full object-cover object-top"
+              />
+              <div
+                class="absolute top-4 left-4 bg-white py-1 px-3 rounded-full text-sm font-medium text-gray-700"
+              >
+                Retail
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Retail Chain Digital Transformation
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Created an omnichannel retail platform that unified online and
+                in-store experiences for customers.
+              </p>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                  <div
+                    class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-2"
+                  >
+                    <i class="ri-store-2-line text-primary"></i>
+                  </div>
+                  <span class="text-sm text-gray-500">Global Retail Brand</span>
+                </div>
+              </div>
+              <div class="space-y-2 mb-6">
+                <div class="flex items-center text-sm">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center mr-2 text-green-500"
+                  >
+                    <i class="ri-arrow-up-line"></i>
+                  </div>
+                  <span class="text-gray-700"
+                    >28% increase in online sales</span
+                  >
+                </div>
+                <div class="flex items-center text-sm">
+                  <div
+                    class="w-5 h-5 flex items-center justify-center mr-2 text-green-500"
+                  >
+                    <i class="ri-arrow-up-line"></i>
+                  </div>
+                  <span class="text-gray-700"
+                    >47% improvement in customer retention</span
+                  >
+                </div>
+              </div>
+              <button
+                class="text-primary font-medium flex items-center hover:text-blue-700 transition-colors whitespace-nowrap"
+              >
+                View case study
+                <i class="ri-arrow-right-line ml-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <button
+            class="bg-white border border-gray-300 text-gray-700 px-6 py-3 !rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap"
+          >
+            View all case studies
+            <i class="ri-arrow-right-line ml-1"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Technology Stack Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Our Technology Stack
+          </h2>
+          <p class="text-gray-600">
+            We leverage industry-leading technologies to deliver robust,
+            scalable, and innovative solutions for our clients.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <!-- Tech Category 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-code-s-slash-line ri-lg text-primary"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Frontend</h3>
+            <div class="space-y-2 text-sm text-gray-600">
+              <p>React</p>
+              <p>Angular</p>
+              <p>Vue.js</p>
+            </div>
+          </div>
+          <!-- Tech Category 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-server-line ri-lg text-primary"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Backend</h3>
+            <div class="space-y-2 text-sm text-gray-600">
+              <p>Node.js</p>
+              <p>.NET Core</p>
+              <p>Java Spring</p>
+            </div>
+          </div>
+          <!-- Tech Category 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-database-2-line ri-lg text-primary"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Databases</h3>
+            <div class="space-y-2 text-sm text-gray-600">
+              <p>PostgreSQL</p>
+              <p>MongoDB</p>
+              <p>SQL Server</p>
+            </div>
+          </div>
+          <!-- Tech Category 4 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-cloud-line ri-lg text-primary"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Cloud</h3>
+            <div class="space-y-2 text-sm text-gray-600">
+              <p>AWS</p>
+              <p>Azure</p>
+              <p>Google Cloud</p>
+            </div>
+          </div>
+          <!-- Tech Category 5 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-smartphone-line ri-lg text-primary"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Mobile</h3>
+            <div class="space-y-2 text-sm text-gray-600">
+              <p>React Native</p>
+              <p>Flutter</p>
+              <p>Swift/Kotlin</p>
+            </div>
+          </div>
+          <!-- Tech Category 6 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="ri-brain-line ri-lg text-primary"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">AI/ML</h3>
+            <div class="space-y-2 text-sm text-gray-600">
+              <p>TensorFlow</p>
+              <p>PyTorch</p>
+              <p>OpenAI</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-16">
+          <h3 class="text-xl font-bold text-gray-800 text-center mb-8">
+            Trusted Partners & Certifications
+          </h3>
+          <div
+            class="flex flex-wrap justify-center items-center gap-8 md:gap-16"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+            >
+              <i class="ri-microsoft-fill ri-3x text-gray-500"></i>
+            </div>
+            <div
+              class="w-16 h-16 flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+            >
+              <i class="ri-amazon-fill ri-3x text-gray-500"></i>
+            </div>
+            <div
+              class="w-16 h-16 flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+            >
+              <i class="ri-google-fill ri-3x text-gray-500"></i>
+            </div>
+            <div
+              class="w-16 h-16 flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+            >
+              <i class="ri-ibm-fill ri-3x text-gray-500"></i>
+            </div>
+            <div
+              class="w-16 h-16 flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+            >
+              <i class="ri-oracle-fill ri-3x text-gray-500"></i>
+            </div>
+            <div
+              class="w-16 h-16 flex items-center justify-center grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+            >
+              <i class="ri-salesforce-fill ri-3x text-gray-500"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div
+          class="max-w-5xl mx-auto bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl overflow-hidden shadow-xl"
+        >
+          <div class="flex flex-col md:flex-row">
+            <div class="w-full md:w-1/2 p-8 md:p-12">
+              <h2 class="text-3xl font-bold text-white mb-4">Get in Touch</h2>
+              <p class="text-blue-100 mb-8">
+                Ready to discuss your project? Contact us to schedule a
+                consultation with our experts. We'll help you find the right
+                technology solution for your business needs.
+              </p>
+              <div class="space-y-6 text-blue-100">
+                <div class="flex items-start">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center mt-1 mr-4 bg-white/10 rounded-full"
+                  >
+                    <i class="ri-map-pin-line text-white"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-white font-medium mb-1">Office Location</h3>
+                    <p>
+                      123 Tech Boulevard, Innovation District, San Francisco, CA
+                      94105
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center mt-1 mr-4 bg-white/10 rounded-full"
+                  >
+                    <i class="ri-phone-line text-white"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-white font-medium mb-1">Phone</h3>
+                    <p>+1 (415) 555-0123</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center mt-1 mr-4 bg-white/10 rounded-full"
+                  >
+                    <i class="ri-mail-line text-white"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-white font-medium mb-1">Email</h3>
+                    <p>services@techsolutions.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 bg-white p-8 md:p-12">
+              <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                Request Information
+              </h3>
+              <form class="space-y-4">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Full Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors text-sm"
+                    placeholder="John Smith"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors text-sm"
+                    placeholder="john@company.com"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="service"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Service of Interest</label
+                  >
+                  <div class="relative">
+                    <select
+                      id="service"
+                      class="w-full appearance-none px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors text-sm pr-8"
+                    >
+                      <option value="">Select a service</option>
+                      <option value="software">
+                        Custom Software Development
+                      </option>
+                      <option value="cloud">Cloud Solutions</option>
+                      <option value="data">Data Analytics</option>
+                      <option value="security">Cybersecurity</option>
+                      <option value="mobile">Mobile App Development</option>
+                      <option value="ai">AI & Machine Learning</option>
+                    </select>
+                    <div
+                      class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
+                    >
+                      <i class="ri-arrow-down-s-line text-gray-500"></i>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label
+                    for="message"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Project Details</label
+                  >
+                  <textarea
+                    id="message"
+                    rows="4"
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors text-sm"
+                    placeholder="Tell us about your project requirements..."
+                  ></textarea>
+                </div>
+                <div class="flex items-center">
+                  <div
+                    id="consent-checkbox"
+                    class="custom-checkbox mr-3 cursor-pointer"
+                  ></div>
+                  <label
+                    for="consent-checkbox"
+                    class="text-sm text-gray-600 cursor-pointer"
+                    >I agree to receive communications about services and
+                    offerings.</label
+                  >
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-primary text-white py-3 !rounded-button font-medium hover:bg-blue-700 transition-colors whitespace-nowrap"
+                >
+                  Submit Request
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-gray-600">
+            Find answers to common questions about our services, processes, and
+            technology solutions.
+          </p>
+        </div>
+        <div class="max-w-3xl mx-auto space-y-4">
+          <!-- FAQ Item 1 -->
+          <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <button
+              class="faq-toggle w-full flex items-center justify-between p-6 text-left"
+              data-expanded="true"
+            >
+              <span class="font-medium text-gray-800"
+                >What types of businesses do you work with?</span
+              >
+              <i
+                class="ri-arrow-down-s-line text-gray-500 transition-transform rotate-180"
+              ></i>
+            </button>
+            <div class="faq-content px-6 pb-6">
+              <p class="text-gray-600">
+                We work with businesses of all sizes across various industries,
+                including finance, healthcare, retail, manufacturing, and more.
+                Our solutions are scalable and can be tailored to meet the
+                specific needs of startups, mid-sized companies, and large
+                enterprises alike.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 2 -->
+          <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <button
+              class="faq-toggle w-full flex items-center justify-between p-6 text-left"
+              data-expanded="false"
+            >
+              <span class="font-medium text-gray-800"
+                >How long does a typical project take to complete?</span
+              >
+              <i
+                class="ri-arrow-down-s-line text-gray-500 transition-transform"
+              ></i>
+            </button>
+            <div class="faq-content px-6 pb-6 hidden">
+              <p class="text-gray-600">
+                Project timelines vary depending on the scope, complexity, and
+                requirements. A simple mobile app might take 2-3 months, while a
+                comprehensive enterprise solution could take 6-12 months. During
+                our initial consultation, we'll provide a detailed timeline
+                based on your specific project needs.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 3 -->
+          <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <button
+              class="faq-toggle w-full flex items-center justify-between p-6 text-left"
+              data-expanded="false"
+            >
+              <span class="font-medium text-gray-800"
+                >What is your approach to data security and privacy?</span
+              >
+              <i
+                class="ri-arrow-down-s-line text-gray-500 transition-transform"
+              ></i>
+            </button>
+            <div class="faq-content px-6 pb-6 hidden">
+              <p class="text-gray-600">
+                We prioritize data security and privacy in all our solutions. We
+                implement industry best practices, including encryption, secure
+                authentication, regular security audits, and compliance with
+                relevant regulations such as GDPR, HIPAA, and CCPA. Our
+                cybersecurity team ensures that all solutions are built with
+                security by design principles.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 4 -->
+          <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <button
+              class="faq-toggle w-full flex items-center justify-between p-6 text-left"
+              data-expanded="false"
+            >
+              <span class="font-medium text-gray-800"
+                >Do you provide ongoing support after project completion?</span
+              >
+              <i
+                class="ri-arrow-down-s-line text-gray-500 transition-transform"
+              ></i>
+            </button>
+            <div class="faq-content px-6 pb-6 hidden">
+              <p class="text-gray-600">
+                Yes, we offer comprehensive support and maintenance services
+                after project completion. We provide different support tiers to
+                meet your needs, from basic technical support to full managed
+                services. Our team ensures your solution remains up-to-date,
+                secure, and optimized for performance.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 5 -->
+          <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <button
+              class="faq-toggle w-full flex items-center justify-between p-6 text-left"
+              data-expanded="false"
+            >
+              <span class="font-medium text-gray-800"
+                >How do you handle project changes and new requirements?</span
+              >
+              <i
+                class="ri-arrow-down-s-line text-gray-500 transition-transform"
+              ></i>
+            </button>
+            <div class="faq-content px-6 pb-6 hidden">
+              <p class="text-gray-600">
+                We follow an agile development methodology that accommodates
+                changes and new requirements throughout the project lifecycle.
+                Our iterative approach allows for regular reviews and
+                adjustments. We have a structured change management process to
+                evaluate, estimate, and implement changes while minimizing
+                impact on timeline and budget.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <p class="text-gray-600 mb-4">
+            Still have questions? We're here to help.
+          </p>
+          <button
+            class="bg-white border border-gray-300 text-gray-700 px-6 py-3 !rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap"
+          >
+            Contact our team
+            <i class="ri-arrow-right-line ml-1"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- CTA Section -->
+    <section id="sec-c" class="py-20 bg-gradient-to-r">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+          Ready to Transform Your Business?
+        </h2>
+        <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+          Partner with us to leverage cutting-edge technology solutions that
+          drive growth, efficiency, and innovation.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            class="bg-white text-primary px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+          >
+            Schedule a Consultation
+          </button>
+          <button
+            class="bg-transparent text-white border-2 border-white px-8 py-3 !rounded-button font-medium hover:bg-white hover:bg-opacity-10 transition-colors whitespace-nowrap"
+          >
+            Explore Our Services
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <a href="#" class="flex items-center mb-6">
+              <img
+                src="https://static.readdy.ai/image/b24679fa8378e170677a56ca770f2ea8/7ed7cafd3d5c6a28c37bee8fba78802a.jpeg"
+                alt="MicroSysLogic Logo"
+                class="h-10"
+              />
+            </a>
+            <p class="text-gray-400 mb-6">
+              Delivering innovative technology solutions that drive digital
+              transformation and business growth.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-twitter-x-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Services</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Custom Software Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Cloud Solutions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Data Analytics</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Cybersecurity</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Mobile App Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >AI &amp; Machine Learning</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Contact Us</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1">
+                  <i class="ri-map-pin-line text-secondary"></i>
+                </div>
+                <span class="text-gray-400"
+                  >123 Tech Park, Silicon Valley, CA 94025, USA</span
+                >
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-phone-line text-secondary"></i>
+                </div>
+                <span class="text-gray-400">+1 (555) 123-4567</span>
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-mail-line text-secondary"></i>
+                </div>
+                <span class="text-gray-400">info@microsyslogic.com</span>
+              </li>
+            </ul>
+            <h3 class="text-lg font-bold mt-6 mb-4">
+              Subscribe to Our Newsletter
+            </h3>
+            <div class="flex">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="bg-gray-800 text-white px-4 py-2 w-full border-none rounded-l-button focus:ring-0"
+              />
+              <button
+                class="bg-secondary text-white px-4 py-2 !rounded-r-button !rounded-l-none whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2025 MicroSysLogic. All rights reserved.
+          </p>
+          <div class="flex space-x-6">
+            <a
+              href="#"
+              class="text-gray-400 text-sm hover:text-white transition-colors"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 text-sm hover:text-white transition-colors"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 text-sm hover:text-white transition-colors"
+              >Cookie Policy</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Checkbox toggle
+      document
+        .getElementById("consent-checkbox")
+        .addEventListener("click", function () {
+          this.classList.toggle("checked");
+        });
+      // FAQ toggles
+      document.querySelectorAll(".faq-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", function () {
+          const content = this.nextElementSibling;
+          const isExpanded = this.getAttribute("data-expanded") === "true";
+          if (isExpanded) {
+            content.classList.add("hidden");
+            this.setAttribute("data-expanded", "false");
+            this.querySelector("i").classList.remove("rotate-180");
+          } else {
+            content.classList.remove("hidden");
+            this.setAttribute("data-expanded", "true");
+            this.querySelector("i").classList.add("rotate-180");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

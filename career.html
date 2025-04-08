@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MicroSysLogic - Careers</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#1E3D59", secondary: "#17A2B8" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Poppins", sans-serif;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+      }
+      .custom-checkbox {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #1e3d59;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .custom-checkbox.checked::after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 6px;
+        width: 6px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+      .custom-checkbox.checked {
+        background-color: #1e3d59;
+      }
+      .custom-radio {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #1e3d59;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .custom-radio.checked::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #1e3d59;
+      }
+      .department-tab.active {
+        color: #1e3d59;
+        border-color: #1e3d59;
+        background-color: rgba(30, 61, 89, 0.05);
+      }
+      .job-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .job-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .benefit-card {
+        transition: transform 0.3s ease;
+      }
+      .benefit-card:hover {
+        transform: translateY(-5px);
+      }
+      .process-step {
+        position: relative;
+      }
+      .process-step:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 30px;
+        right: -50%;
+        width: 100%;
+        height: 2px;
+        background-color: #e5e7eb;
+        z-index: 0;
+      }
+      .process-step.active .step-number {
+        background-color: #1e3d59;
+        color: white;
+      }
+      .process-step.active::after {
+        background-color: #1e3d59;
+      }
+      .logoi {
+        padding-left: 15px;
+        height: 80px;
+        width: 120px;
+        object-fit: cover;
+      }
+      #hdh {
+        height: 80px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Header -->
+    <header id="hdh" class="sticky top-0 z-50 bg-white shadow-md">
+        <div
+          class="container mx-auto px-0 py-0 flex justify-between items-center"
+        >
+          <a href="index.html" class="flex items-center">
+            <img
+              class="logoi"
+              src="https://static.readdy.ai/image/b24679fa8378e170677a56ca770f2ea8/7ed7cafd3d5c6a28c37bee8fba78802a.jpeg"
+              alt="MicroSysLogic Logo"
+              class="h-10"
+            />
+          </a>
+          <nav class="hidden lg:flex space-x-8">
+            <a href="h3.html" class="font-medium text-gray-700 hover:text-primary transition-colors "
+              >Home</a
+            >
+            <a
+              href="service.html"
+              class="font-medium text-gray-700 hover:text-primary transition-colors"
+              target="_parent"
+              >Services</a
+            >
+            <a
+              href="#"
+              class="font-medium text-primary border-b-2 border-primary"
+              target="_parent"
+              >Careers</a
+            >
+            <a
+              href="aboutus.html"
+              class="font-medium text-gray-700 hover:text-primary transition-colors"
+              target="_parent"
+              >About Us</a
+            >
+            <a
+              href="#"
+              class="font-medium text-gray-700 hover:text-primary transition-colors"
+              target="_parent"
+              >Projects</a
+            >
+            <a
+              href="contactus.html"
+              class="font-medium text-gray-700 hover:text-primary transition-colors"
+              target="_parent"
+              >Contact</a
+            >
+          </nav>
+          <div class="lg:hidden w-10 h-10 flex items-center justify-center">
+            <i class="ri-menu-line ri-lg text-primary"></i>
+          </div>
+          <button
+            class="hidden lg:block bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+          >
+            Get in Touch
+          </button>
+        </div>
+      </header>
+    <!-- Page Title Section -->
+    <section
+      class="bg-gradient-to-r from-primary/10 to-secondary/10 py-12 md:py-16"
+    >
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6"
+          >
+            Join Our Team
+          </h1>
+          <p class="text-lg text-gray-600 mb-8">
+            Discover exciting career opportunities at MicroSysLogic where
+            innovation meets growth. We're looking for talented individuals who
+            are passionate about technology and ready to make an impact.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <button
+              class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+            >
+              View All Positions
+            </button>
+            <button
+              class="bg-white text-primary border-2 border-primary px-8 py-3 !rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap"
+            >
+              Learn About Our Culture
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Department Navigation -->
+    <section class="py-8 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-wrap gap-4 justify-center">
+          <button
+            class="bg-gray-100 text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-gray-200 transition-colors whitespace-nowrap"
+          >
+            All Departments
+          </button>
+          <button
+            class="bg-white text-gray-600 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors whitespace-nowrap"
+          >
+            Software Development
+          </button>
+          <button
+            class="bg-white text-gray-600 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors whitespace-nowrap"
+          >
+            Cloud Solutions
+          </button>
+          <button
+            class="bg-white text-gray-600 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors whitespace-nowrap"
+          >
+            Data Analytics
+          </button>
+          <button
+            class="bg-white text-gray-600 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors whitespace-nowrap"
+          >
+            Cybersecurity
+          </button>
+          <button
+            class="bg-white text-gray-600 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors whitespace-nowrap"
+          >
+            Product Management
+          </button>
+          <button
+            class="bg-white text-gray-600 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors whitespace-nowrap"
+          >
+            Marketing
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Job Listings -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Open Positions</h2>
+        <p class="text-lg text-gray-700 mb-12">
+          Explore our current opportunities and find your perfect role
+        </p>
+        <div class="grid grid-cols-1 gap-6">
+          <!-- Job Position 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+            <div
+              class="flex flex-col md:flex-row md:items-center justify-between"
+            >
+              <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                  Senior Software Engineer
+                </h3>
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                    >Software Development</span
+                  >
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                    >Full-time</span
+                  >
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                    >San Francisco, CA</span
+                  >
+                </div>
+                <p class="text-gray-600">
+                  Lead the development of our cloud-based enterprise solutions
+                  using modern technologies.
+                </p>
+              </div>
+              <button
+                class="mt-4 md:mt-0 bg-primary text-white px-6 py-2 rounded-button font-medium shadow-md hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Apply Now
+              </button>
+            </div>
+          </div>
+          <!-- Job Position 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+            <div
+              class="flex flex-col md:flex-row md:items-center justify-between"
+            >
+              <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                  Data Scientist
+                </h3>
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span
+                    class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full"
+                    >Data Analytics</span
+                  >
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                    >Full-time</span
+                  >
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                    >Remote</span
+                  >
+                </div>
+                <p class="text-gray-600">
+                  Develop and implement advanced analytics models to extract
+                  insights from complex datasets.
+                </p>
+              </div>
+              <button
+                class="mt-4 md:mt-0 bg-primary text-white px-6 py-2 rounded-button font-medium shadow-md hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Apply Now
+              </button>
+            </div>
+          </div>
+          <!-- Job Position 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+            <div
+              class="flex flex-col md:flex-row md:items-center justify-between"
+            >
+              <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                  Cloud Solutions Architect
+                </h3>
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span
+                    class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full"
+                    >Cloud Solutions</span
+                  >
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                    >Full-time</span
+                  >
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                    >New York, NY</span
+                  >
+                </div>
+                <p class="text-gray-600">
+                  Design and implement scalable cloud infrastructure solutions
+                  for enterprise clients.
+                </p>
+              </div>
+              <button
+                class="mt-4 md:mt-0 bg-primary text-white px-6 py-2 rounded-button font-medium shadow-md hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Apply Now
+              </button>
+            </div>
+          </div>
+          <!-- Job Position 4 -->
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+            <div
+              class="flex flex-col md:flex-row md:items-center justify-between"
+            >
+              <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                  Cybersecurity Analyst
+                </h3>
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span
+                    class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full"
+                    >Cybersecurity</span
+                  >
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                    >Full-time</span
+                  >
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                    >Chicago, IL</span
+                  >
+                </div>
+                <p class="text-gray-600">
+                  Monitor and protect our systems and client data from security
+                  threats and vulnerabilities.
+                </p>
+              </div>
+              <button
+                class="mt-4 md:mt-0 bg-primary text-white px-6 py-2 rounded-button font-medium shadow-md hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Apply Now
+              </button>
+            </div>
+          </div>
+          <!-- Job Position 5 -->
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+            <div
+              class="flex flex-col md:flex-row md:items-center justify-between"
+            >
+              <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                  Product Manager
+                </h3>
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span
+                    class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full"
+                    >Product Management</span
+                  >
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                    >Full-time</span
+                  >
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                    >Austin, TX</span
+                  >
+                </div>
+                <p class="text-gray-600">
+                  Lead the strategy and development of our enterprise software
+                  products from conception to launch.
+                </p>
+              </div>
+              <button
+                class="mt-4 md:mt-0 bg-primary text-white px-6 py-2 rounded-button font-medium shadow-md hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Apply Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Company Culture Section -->
+    <section class="py-12 md:py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+            Our Company Culture
+          </h2>
+          <p class="text-gray-600">
+            At MicroSysLogic, we believe in creating an environment where
+            innovation thrives and people grow. Our culture is built on these
+            core values:
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Culture Value 1 -->
+          <div
+            class="bg-white p-8 rounded-lg shadow-sm text-center animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="ri-lightbulb-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-primary">Innovation</h3>
+            <p class="text-gray-600">
+              We encourage creative thinking and embrace new technologies to
+              solve complex problems. Our team members are empowered to explore
+              innovative solutions and push boundaries.
+            </p>
+          </div>
+          <!-- Culture Value 2 -->
+          <div
+            class="bg-white p-8 rounded-lg shadow-sm text-center animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="ri-team-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-primary">Collaboration</h3>
+            <p class="text-gray-600">
+              We believe in the power of teamwork and diverse perspectives. Our
+              collaborative environment fosters open communication, mutual
+              respect, and shared success.
+            </p>
+          </div>
+          <!-- Culture Value 3 -->
+          <div
+            class="bg-white p-8 rounded-lg shadow-sm text-center animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="ri-rocket-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-primary">Growth</h3>
+            <p class="text-gray-600">
+              We are committed to continuous learning and professional
+              development. We invest in our people and provide opportunities for
+              career advancement and personal growth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Benefits Section -->
+    <section class="py-12 md:py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="animate-on-scroll">
+            <h2 class="text-2xl md:text-3xl font-bold text-primary mb-6">
+              Why Join MicroSysLogic?
+            </h2>
+            <p class="text-gray-600 mb-6">
+              At MicroSysLogic, we believe that our success is directly tied to
+              the wellbeing and growth of our team members. We offer a
+              comprehensive benefits package designed to support your
+              professional development, health, and work-life balance.
+            </p>
+            <p class="text-gray-600 mb-6">
+              Our collaborative environment encourages innovation and provides
+              opportunities to work on cutting-edge technologies with some of
+              the most talented professionals in the industry. Whether you're
+              just starting your career or looking for your next challenge,
+              MicroSysLogic offers a supportive and dynamic workplace where you
+              can thrive.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <button
+                class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+              >
+                View Open Positions
+              </button>
+              <button
+                class="bg-white text-primary border-2 border-primary px-8 py-3 !rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap"
+              >
+                Meet Our Team
+              </button>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-6 animate-on-scroll">
+            <!-- Benefit 1 -->
+            <div class="benefit-card bg-gray-50 p-6 rounded-lg">
+              <div
+                class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-4"
+              >
+                <i class="ri-heart-pulse-line ri-lg text-primary"></i>
+              </div>
+              <h3 class="text-lg font-bold mb-2 text-primary">
+                Health & Wellness
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Comprehensive medical, dental, and vision coverage for you and
+                your family.
+              </p>
+            </div>
+            <!-- Benefit 2 -->
+            <div class="benefit-card bg-gray-50 p-6 rounded-lg">
+              <div
+                class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-4"
+              >
+                <i class="ri-book-open-line ri-lg text-primary"></i>
+              </div>
+              <h3 class="text-lg font-bold mb-2 text-primary">
+                Learning & Development
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Continuous learning opportunities, certifications, and
+                professional growth programs.
+              </p>
+            </div>
+            <!-- Benefit 3 -->
+            <div class="benefit-card bg-gray-50 p-6 rounded-lg">
+              <div
+                class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-4"
+              >
+                <i class="ri-calendar-line ri-lg text-primary"></i>
+              </div>
+              <h3 class="text-lg font-bold mb-2 text-primary">Flexible Work</h3>
+              <p class="text-gray-600 text-sm">
+                Remote and hybrid work options with flexible schedules to
+                maintain work-life balance.
+              </p>
+            </div>
+            <!-- Benefit 4 -->
+            <div class="benefit-card bg-gray-50 p-6 rounded-lg">
+              <div
+                class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-4"
+              >
+                <i class="ri-money-dollar-circle-line ri-lg text-primary"></i>
+              </div>
+              <h3 class="text-lg font-bold mb-2 text-primary">
+                Competitive Compensation
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Attractive salary packages, performance bonuses, and equity
+                options.
+              </p>
+            </div>
+            <!-- Benefit 5 -->
+            <div class="benefit-card bg-gray-50 p-6 rounded-lg">
+              <div
+                class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-4"
+              >
+                <i class="ri-time-line ri-lg text-primary"></i>
+              </div>
+              <h3 class="text-lg font-bold mb-2 text-primary">Paid Time Off</h3>
+              <p class="text-gray-600 text-sm">
+                Generous vacation policy, paid holidays, and parental leave
+                benefits.
+              </p>
+            </div>
+            <!-- Benefit 6 -->
+            <div class="benefit-card bg-gray-50 p-6 rounded-lg">
+              <div
+                class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-4"
+              >
+                <i class="ri-community-line ri-lg text-primary"></i>
+              </div>
+              <h3 class="text-lg font-bold mb-2 text-primary">Team Building</h3>
+              <p class="text-gray-600 text-sm">
+                Regular team events, retreats, and social activities to foster
+                community.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Application Process -->
+    <section class="py-12 md:py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+            Our Application Process
+          </h2>
+          <p class="text-gray-600">
+            We've designed a straightforward process to help you find your
+            perfect role at MicroSysLogic
+          </p>
+        </div>
+        <div
+          class="flex flex-col md:flex-row justify-between items-start max-w-5xl mx-auto"
+        >
+          <!-- Step 1 -->
+          <div
+            class="process-step active flex flex-col items-center text-center mb-8 md:mb-0 w-full md:w-1/5 animate-on-scroll"
+          >
+            <div
+              class="step-number w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold mb-4 z-10"
+            >
+              1
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-primary">Apply Online</h3>
+            <p class="text-gray-600 text-sm">
+              Submit your application through our careers portal
+            </p>
+          </div>
+          <!-- Step 2 -->
+          <div
+            class="process-step flex flex-col items-center text-center mb-8 md:mb-0 w-full md:w-1/5 animate-on-scroll"
+          >
+            <div
+              class="step-number w-16 h-16 rounded-full bg-gray-200 text-gray-700 flex items-center justify-center text-xl font-bold mb-4 z-10"
+            >
+              2
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-gray-700">
+              Initial Screening
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Brief phone or video call with our recruiting team
+            </p>
+          </div>
+          <!-- Step 3 -->
+          <div
+            class="process-step flex flex-col items-center text-center mb-8 md:mb-0 w-full md:w-1/5 animate-on-scroll"
+          >
+            <div
+              class="step-number w-16 h-16 rounded-full bg-gray-200 text-gray-700 flex items-center justify-center text-xl font-bold mb-4 z-10"
+            >
+              3
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-gray-700">
+              Technical Assessment
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Skills evaluation relevant to the position
+            </p>
+          </div>
+          <!-- Step 4 -->
+          <div
+            class="process-step flex flex-col items-center text-center mb-8 md:mb-0 w-full md:w-1/5 animate-on-scroll"
+          >
+            <div
+              class="step-number w-16 h-16 rounded-full bg-gray-200 text-gray-700 flex items-center justify-center text-xl font-bold mb-4 z-10"
+            >
+              4
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-gray-700">
+              Team Interviews
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Meet with potential teammates and leadership
+            </p>
+          </div>
+          <!-- Step 5 -->
+          <div
+            class="process-step flex flex-col items-center text-center w-full md:w-1/5 animate-on-scroll"
+          >
+            <div
+              class="step-number w-16 h-16 rounded-full bg-gray-200 text-gray-700 flex items-center justify-center text-xl font-bold mb-4 z-10"
+            >
+              5
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-gray-700">
+              Offer & Onboarding
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Welcome to the MicroSysLogic team!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Employee Testimonials -->
+    <section class="py-12 md:py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+            What Our Team Says
+          </h2>
+          <p class="text-gray-600">
+            Hear from the people who make MicroSysLogic a great place to work
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-gray-50 p-8 rounded-lg animate-on-scroll">
+            <div class="flex items-center mb-6">
+              <div class="text-yellow-400 flex">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "Working at MicroSysLogic has been an incredible journey. The
+              culture of innovation and continuous learning has helped me grow
+              both professionally and personally. I'm constantly challenged and
+              supported by my talented colleagues."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4"
+              >
+                <i class="ri-user-3-line ri-lg text-gray-600"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Rebecca Chen</h4>
+                <p class="text-gray-500 text-sm">
+                  Senior Software Engineer, 3 years
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="bg-gray-50 p-8 rounded-lg animate-on-scroll">
+            <div class="flex items-center mb-6">
+              <div class="text-yellow-400 flex">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "The flexibility and work-life balance at MicroSysLogic is
+              unmatched. I've been able to advance my career while having time
+              for my family and personal interests. The leadership team truly
+              cares about employee wellbeing and growth."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4"
+              >
+                <i class="ri-user-3-line ri-lg text-gray-600"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Marcus Johnson</h4>
+                <p class="text-gray-500 text-sm">
+                  Cloud Solutions Architect, 5 years
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="bg-gray-50 p-8 rounded-lg animate-on-scroll">
+            <div class="flex items-center mb-6">
+              <div class="text-yellow-400 flex">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "As someone early in their career, I couldn't have asked for a
+              better place to start. The mentorship program and learning
+              opportunities have accelerated my professional development. I feel
+              valued and empowered to contribute meaningfully to projects."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4"
+              >
+                <i class="ri-user-3-line ri-lg text-gray-600"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Priya Sharma</h4>
+                <p class="text-gray-500 text-sm">Data Analyst, 2 years</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Call to Action -->
+    <section class="py-12 md:py-16 bg-primary">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">
+            Ready to Join Our Team?
+          </h2>
+          <p class="text-white text-opacity-90 text-lg mb-8">
+            Explore our current openings and take the next step in your career
+            with MicroSysLogic.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              class="bg-white text-primary px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+            >
+              View All Positions
+            </button>
+            <button
+              class="bg-transparent text-white border-2 border-white px-8 py-3 !rounded-button font-medium hover:bg-white hover:bg-opacity-10 transition-colors whitespace-nowrap"
+            >
+              Learn More About Us
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Application Form -->
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <a
+              href="https://readdy.ai/home/ee8aef8b-4673-4460-9f40-a373cb369ed2/0e5e38ee-e7b0-40ab-aa38-e83dc48733e2"
+              data-readdy="true"
+              class="flex items-center mb-6"
+            >
+              <img
+                src="https://static.readdy.ai/image/b24679fa8378e170677a56ca770f2ea8/7ed7cafd3d5c6a28c37bee8fba78802a.jpeg"
+                alt="MicroSysLogic"
+                class="h-10"
+              />
+            </a>
+            <p class="text-gray-400 mb-6">
+              Delivering innovative technology solutions that drive digital
+              transformation and business growth.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-twitter-x-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="h3.html"
+                  data-readdy="true"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="service.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a href="career.html" class="text-white transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Career Resources</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Job Openings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Benefits & Perks</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Employee Stories</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Interview Tips</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Career Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Life at MicroSysLogic</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-6">Contact Us</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1">
+                  <i class="ri-map-pin-line text-secondary"></i>
+                </div>
+                <span class="text-gray-400"
+                  >123 Tech Park, Silicon Valley, CA 94025, USA</span
+                >
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-phone-line text-secondary"></i>
+                </div>
+                <span class="text-gray-400">+1 (555) 123-4567</span>
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-mail-line text-secondary"></i>
+                </div>
+                <span class="text-gray-400">careers@microsyslogic.com</span>
+              </li>
+            </ul>
+            <h3 class="text-lg font-bold mt-6 mb-4">Job Alerts</h3>
+            <div class="flex">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="bg-gray-800 text-white px-4 py-2 w-full border-none rounded-l-button focus:ring-0"
+              />
+              <button
+                class="bg-secondary text-white px-4 py-2 !rounded-r-button !rounded-l-none whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2025 MicroSysLogic. All rights reserved.
+          </p>
+          <div class="flex space-x-6">
+            <a
+              href="#"
+              class="text-gray-400 text-sm hover:text-white transition-colors"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 text-sm hover:text-white transition-colors"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 text-sm hover:text-white transition-colors"
+              >Cookie Policy</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Department tabs functionality
+        const departmentTabs = document.querySelectorAll(".department-tab");
+        departmentTabs.forEach((tab) => {
+          tab.addEventListener("click", function () {
+            departmentTabs.forEach((t) => t.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+        // Custom checkbox functionality
+        const checkboxes = document.querySelectorAll(".custom-checkbox");
+        checkboxes.forEach((checkbox) => {
+          checkbox.addEventListener("click", function () {
+            this.classList.toggle("checked");
+          });
+        });
+        // Custom radio functionality
+        const radios = document.querySelectorAll(".custom-radio");
+        radios.forEach((radio) => {
+          radio.addEventListener("click", function () {
+            // Uncheck all radios in the same group
+            const name = this.getAttribute("data-name");
+            if (name) {
+              document
+                .querySelectorAll(`.custom-radio[data-name="${name}"]`)
+                .forEach((r) => {
+                  r.classList.remove("checked");
+                });
+            }
+            this.classList.add("checked");
+          });
+        });
+        // Scroll animation
+        const animatedElements =
+          document.querySelectorAll(".animate-on-scroll");
+        function checkScroll() {
+          animatedElements.forEach((element) => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (elementTop < windowHeight * 0.85) {
+              element.classList.add("visible");
+            }
+          });
+        }
+        // Initial check
+        checkScroll();
+        // Check on scroll
+        window.addEventListener("scroll", checkScroll);
+        // Apply Now button functionality
+        const applyButtons = document.querySelectorAll(".job-card button");
+        applyButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Scroll to application form
+            document
+              .querySelector("section:nth-last-of-type(2)")
+              .scrollIntoView({ behavior: "smooth" });
+            // Get job title from the card
+            const jobCard = button.closest(".job-card");
+            const jobTitle = jobCard.querySelector("h3").textContent;
+            const department =
+              jobCard.querySelector("span.inline-block").textContent;
+            // Pre-fill the form if possible
+            const departmentSelect = document.getElementById("department");
+            if (departmentSelect) {
+              for (let i = 0; i < departmentSelect.options.length; i++) {
+                if (departmentSelect.options[i].text.includes(department)) {
+                  departmentSelect.selectedIndex = i;
+                  break;
+                }
+              }
+            }
+            // Add job title to the form heading
+            const formHeading = document.querySelector(
+              "section:nth-last-of-type(2) h2"
+            );
+            if (formHeading) {
+              formHeading.textContent = `Apply for: ${jobTitle}`;
+            }
+          });
+        });
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector(".lg\\:hidden");
+        if (mobileMenuButton) {
+          mobileMenuButton.addEventListener("click", function () {
+            const mobileMenu = document.createElement("div");
+            mobileMenu.className = "fixed inset-0 bg-white z-50 flex flex-col";
+            const mobileMenuHeader = document.createElement("div");
+            mobileMenuHeader.className =
+              "flex justify-between items-center p-4 border-b";
+            const logo = document.createElement("img");
+            logo.src =
+              "https://static.readdy.ai/image/b24679fa8378e170677a56ca770f2ea8/7ed7cafd3d5c6a28c37bee8fba78802a.jpeg";
+            logo.alt = "MicroSysLogic";
+            logo.className = "h-10";
+            const closeButton = document.createElement("button");
+            closeButton.className = "text-gray-500 hover:text-gray-700";
+            closeButton.innerHTML = '<i class="ri-close-line ri-lg"></i>';
+            closeButton.onclick = () => mobileMenu.remove();
+            mobileMenuHeader.appendChild(logo);
+            mobileMenuHeader.appendChild(closeButton);
+            const mobileMenuContent = document.createElement("div");
+            mobileMenuContent.className = "flex flex-col p-4 space-y-4";
+            const menuItems = [
+              {
+                text: "Home",
+                active: false,
+                href: "https://readdy.ai/home/ee8aef8b-4673-4460-9f40-a373cb369ed2/0e5e38ee-e7b0-40ab-aa38-e83dc48733e2",
+                dataReaddy: true,
+              },
+              { text: "Services", active: false },
+              { text: "Careers", active: true },
+              { text: "About Us", active: false },
+              { text: "Projects", active: false },
+              { text: "Contact", active: false },
+            ];
+            menuItems.forEach((item) => {
+              const menuItem = document.createElement("a");
+              menuItem.href = item.href || "#";
+              if (item.dataReaddy) {
+                menuItem.setAttribute("data-readdy", "true");
+              }
+              menuItem.className = `text-lg font-medium p-2 ${
+                item.active
+                  ? "text-primary border-l-4 border-primary pl-4"
+                  : "text-gray-700"
+              }`;
+              menuItem.textContent = item.text;
+              if (!item.href) {
+                menuItem.onclick = (e) => {
+                  e.preventDefault();
+                  mobileMenu.remove();
+                };
+              }
+              mobileMenuContent.appendChild(menuItem);
+            });
+            const contactButton = document.createElement("button");
+            contactButton.className =
+              "bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap mt-4";
+            contactButton.textContent = "Get in Touch";
+            contactButton.onclick = () => {
+              mobileMenu.remove();
+            };
+            mobileMenuContent.appendChild(contactButton);
+            mobileMenu.appendChild(mobileMenuHeader);
+            mobileMenu.appendChild(mobileMenuContent);
+            document.body.appendChild(mobileMenu);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
