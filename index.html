@@ -1171,6 +1171,83 @@
         // Initialize carousel
         updateCarousel();
       });
+      const mobileMenuButton = document.querySelector(".lg\\:hidden");
+        if (mobileMenuButton) {
+          mobileMenuButton.addEventListener("click", function () {
+            const mobileMenu = document.createElement("div");
+            mobileMenu.className = "fixed inset-0 bg-white z-50 flex flex-col";
+            const mobileMenuHeader = document.createElement("div");
+            mobileMenuHeader.className =
+              "flex justify-between items-center p-4 border-b";
+            const logo = document.createElement("img");
+            logo.src =
+              "https://static.readdy.ai/image/b24679fa8378e170677a56ca770f2ea8/7ed7cafd3d5c6a28c37bee8fba78802a.jpeg";
+            logo.alt = "MicroSysLogic";
+            logo.className = "h-10";
+            const closeButton = document.createElement("button");
+            closeButton.className = "text-gray-500 hover:text-gray-700";
+            closeButton.innerHTML = '<i class="ri-close-line ri-lg"></i>';
+            closeButton.onclick = () => mobileMenu.remove();
+            mobileMenuHeader.appendChild(logo);
+            mobileMenuHeader.appendChild(closeButton);
+            const mobileMenuContent = document.createElement("div");
+            mobileMenuContent.className = "flex flex-col p-4 space-y-4";
+            const menuItems = [
+              {
+                text: "Home",
+                active: false,
+                href: "index.html",
+                dataReaddy: true,
+              },
+              { text: "Services", active: false,
+               href: "service.html",
+                dataReaddy: true, },
+              { text: "Careers", active: true,
+               href: "career.html",
+                dataReaddy: true, },
+              { text: "About Us",
+               href: "aboutus.html",
+                dataReaddy: true,
+               active: false, },
+              { text: "Projects", active: false },
+              { text: "Contact", active: false,
+              href: "contactus.html",
+                dataReaddy: true,},
+            ];
+            menuItems.forEach((item) => {
+              const menuItem = document.createElement("a");
+              menuItem.href = item.href || "#";
+              if (item.dataReaddy) {
+                menuItem.setAttribute("data-readdy", "true");
+              }
+              menuItem.className = `text-lg font-medium p-2 ${
+                item.active
+                  ? "text-primary border-l-4 border-primary pl-4"
+                  : "text-gray-700"
+              }`;
+              menuItem.textContent = item.text;
+              if (!item.href) {
+                menuItem.onclick = (e) => {
+                  e.preventDefault();
+                  mobileMenu.remove();
+                };
+              }
+              mobileMenuContent.appendChild(menuItem);
+            });
+            const contactButton = document.createElement("button");
+            contactButton.className =
+              "bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap mt-4";
+            contactButton.textContent = "Get in Touch";
+            contactButton.onclick = () => {
+              mobileMenu.remove();
+            };
+            mobileMenuContent.appendChild(contactButton);
+            mobileMenu.appendChild(mobileMenuHeader);
+            mobileMenu.appendChild(mobileMenuContent);
+            document.body.appendChild(mobileMenu);
+          });
+        }
+      });
     </script>
   </body>
 </html>
