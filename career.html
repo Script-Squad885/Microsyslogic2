@@ -1210,14 +1210,23 @@
               {
                 text: "Home",
                 active: false,
-                href: "https://readdy.ai/home/ee8aef8b-4673-4460-9f40-a373cb369ed2/0e5e38ee-e7b0-40ab-aa38-e83dc48733e2",
+                href: "index.html",
                 dataReaddy: true,
               },
-              { text: "Services", active: false },
-              { text: "Careers", active: true },
-              { text: "About Us", active: false },
+              { text: "Services", active: false,
+               href: "service.html",
+                dataReaddy: true, },
+              { text: "Careers", active: true,
+               href: "career.html",
+                dataReaddy: true, },
+              { text: "About Us",
+               href: "aboutus.html",
+                dataReaddy: true,
+               active: false, },
               { text: "Projects", active: false },
-              { text: "Contact", active: false },
+              { text: "Contact", active: false,
+              href: "contactus.html",
+                dataReaddy: true,},
             ];
             menuItems.forEach((item) => {
               const menuItem = document.createElement("a");
